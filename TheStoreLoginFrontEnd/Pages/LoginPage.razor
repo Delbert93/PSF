@@ -3,16 +3,22 @@
 
 
 <div class="container">
-    @*<label for="uname"><b>Username</b></label>
+    <label for="uname"><b>Username</b></label>
     <textarea @bind="UsernameField"></textarea>
 
     <label for="psw"><b>Password</b></label>
-    <textarea @bind="PasswordField"></textarea>*@
+    <textarea @bind="PasswordField"></textarea>
 
     <button type="submit">Login</button>
 </div>
 
 @code {
+    private string UsernameField;
+    private string PasswordField;
 
+    private async Task LoginValidation()
+    {
+
+    }
 
 }

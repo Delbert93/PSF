@@ -14,7 +14,7 @@ namespace TheStoreLoginAPI.Controllers
             return View();
         }
 
-        public void LoginValidation(string inputUsername, string inputPassword)
+        public async Task LoginValidation(string inputUsername, string inputPassword)
         {
             UserModel userModel = new UserModel();
             userModel.ValidateUsername(inputUsername);
