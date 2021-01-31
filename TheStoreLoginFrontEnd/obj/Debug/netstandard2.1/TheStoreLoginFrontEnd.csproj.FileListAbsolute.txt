@@ -713,6 +713,6 @@ C:\Users\lloyd\Desktop\PSF\TheStoreLoginFrontEnd\bin\Debug\netstandard2.1\wwwroo
 C:\Users\lloyd\Desktop\PSF\TheStoreLoginFrontEnd\obj\Debug\netstandard2.1\integrity\99dseBOagY3mzu5Y8Eqm8gRI_o8QbbCp7R2Ew9bQ_5E=.hash
 C:\Users\lloyd\Desktop\PSF\TheStoreLoginFrontEnd\obj\Debug\netstandard2.1\compressed\_framework\_bin\System.Net.Http.Json.dll.gz
 C:\Users\lloyd\Desktop\PSF\TheStoreLoginFrontEnd\obj\Debug\netstandard2.1\compressed\_framework\_bin\System.Net.Http.Json.dll.br
-C:\Users\lloyd\Desktop\PSF\TheStoreLoginFrontEnd\obj\Debug\netstandard2.1\integrity\sy3FRPS62S2inbok2I2c73Q1ymGbAiVBvexRfPSGpGI=.hash
-C:\Users\lloyd\Desktop\PSF\TheStoreLoginFrontEnd\obj\Debug\netstandard2.1\integrity\usNXbuDUSPLs1BpYT3PiFASOTrmMDLVhPrmutB6TKHI=.hash
-C:\Users\lloyd\Desktop\PSF\TheStoreLoginFrontEnd\obj\Debug\netstandard2.1\integrity\E9Ka4WvUKu88fpN1c_MLefIW2dufQIv4imCyjnU6bdw=.hash
+C:\Users\lloyd\Desktop\PSF\TheStoreLoginFrontEnd\obj\Debug\netstandard2.1\integrity\Z2a8yT53VKlU0XT8ZwCZnrmEtiPJQPk7E-JZ7ggnqaA=.hash
+C:\Users\lloyd\Desktop\PSF\TheStoreLoginFrontEnd\obj\Debug\netstandard2.1\integrity\bvbEQo3cvkuPvVngdVS5Idw8eUs6BaMXoruRnPChiwo=.hash
+C:\Users\lloyd\Desktop\PSF\TheStoreLoginFrontEnd\obj\Debug\netstandard2.1\integrity\WpRWJgBolwn9kWu1pYqMr9v8QpbuhzqBNlu60b1YD74=.hash

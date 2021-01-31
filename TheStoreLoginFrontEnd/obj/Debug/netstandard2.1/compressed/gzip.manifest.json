@@ -1,7 +1,7 @@
 {
   "FilesToCompress": [
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\sy3FRPS62S2inbok2I2c73Q1ymGbAiVBvexRfPSGpGI=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\Z2a8yT53VKlU0XT8ZwCZnrmEtiPJQPk7E-JZ7ggnqaA=.hash",
       "Source": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginFrontEnd\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\TheStoreLoginFrontEnd.dll",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/TheStoreLoginFrontEnd.dll.gz"
     },
@@ -266,7 +266,7 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\usNXbuDUSPLs1BpYT3PiFASOTrmMDLVhPrmutB6TKHI=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\bvbEQo3cvkuPvVngdVS5Idw8eUs6BaMXoruRnPChiwo=.hash",
       "Source": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginFrontEnd\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\TheStoreLoginFrontEnd.pdb",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/TheStoreLoginFrontEnd.pdb.gz"
     },
@@ -296,7 +296,7 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.webassembly.js.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\E9Ka4WvUKu88fpN1c_MLefIW2dufQIv4imCyjnU6bdw=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\WpRWJgBolwn9kWu1pYqMr9v8QpbuhzqBNlu60b1YD74=.hash",
       "Source": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginFrontEnd\\obj\\Debug\\netstandard2.1\\blazor\\blazor.boot.json",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.boot.json.gz"
     }

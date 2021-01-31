@@ -6,7 +6,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "TheStoreLoginFrontEnd.dll": "sha256-sy3FRPS62S2inbok2I2c73Q1ymGbAiVBvexRfPSGpGI=",
+      "TheStoreLoginFrontEnd.dll": "sha256-Z2a8yT53VKlU0XT8ZwCZnrmEtiPJQPk7E\/JZ7ggnqaA=",
       "System.Text.Json.dll": "sha256-HQeN+ZfHAERO+uW0fP0J9J3WV1hQ3vUIOWbqGSYBPp8=",
       "System.Runtime.CompilerServices.Unsafe.dll": "sha256-kL\/omZDwqByAi+lPdMeDmr3XjHcn4RVb+LmZ4mut1Yc=",
       "mscorlib.dll": "sha256-BaZPMj95+YNe3G4ckTGD6szZFwZeA2MOHn91zTGKDeU=",
@@ -61,7 +61,7 @@
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-czNf3btAeBW\/vvID5LAfgcsNZ+GM3ssVuPaMflcg0rs="
     },
     "pdb": {
-      "TheStoreLoginFrontEnd.pdb": "sha256-usNXbuDUSPLs1BpYT3PiFASOTrmMDLVhPrmutB6TKHI=",
+      "TheStoreLoginFrontEnd.pdb": "sha256-bvbEQo3cvkuPvVngdVS5Idw8eUs6BaMXoruRnPChiwo=",
       "StoreLogin.Shared.pdb": "sha256-qNZzfKAfXXjivyH\/SA29HTuNptNzz9Y5wzCYe7axTN0="
     },
     "runtime": {
