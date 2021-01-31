@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace TheStoreLoginAPI.Models
+namespace StoreLogin.Shared
 {
     public class TaintedUserModel
     {
-        private string username;
-        private string password;
+        public string username;
+        public string password;
 
         public string GetUsername()
         {

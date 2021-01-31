@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+tUe9vCtXcHk0fF83SALbuLX4q4fphQaosPMqRCKmU/CX23t1hVF0+oC++3jBEMRGDKk04klfAZ95BzC7WTLYQ==",
+  "dgSpecHash": "UUDj+SYujBFJXpyrn8LqR0CLg//EbOrha/W4/m03MXnCOzt1utECDDmi0WpUfvwqq26RC4BKcUAvugNkib6lDQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lloyd\\source\\repos\\TheStoreLoginAPI\\TheStoreLoginTests\\TheStoreLoginTests.csproj",
+  "projectFilePath": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginTests\\TheStoreLoginTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lloyd\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\lloyd\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",

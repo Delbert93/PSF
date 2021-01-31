@@ -430,6 +430,16 @@
         "runtime": {
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
+      },
+      "StoreLogin.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/StoreLogin.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StoreLogin.Shared.dll": {}
+        }
       }
     }
   },
@@ -1626,6 +1636,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "StoreLogin.Shared/1.0.0": {
+      "type": "project",
+      "path": "../StoreLogin.Shared/StoreLogin.Shared.csproj",
+      "msbuildProject": "../StoreLogin.Shared/StoreLogin.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1633,6 +1648,7 @@
       "Microsoft.AspNetCore.Components.WebAssembly >= 3.2.1",
       "Microsoft.AspNetCore.Components.WebAssembly.Build >= 3.2.1",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 3.2.1",
+      "StoreLogin.Shared >= 1.0.0",
       "System.Net.Http.Json >= 3.2.0"
     ]
   },
@@ -1644,11 +1660,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lloyd\\source\\repos\\TheStoreLoginAPI\\TheStoreLoginFrontEnd\\TheStoreLoginFrontEnd.csproj",
+      "projectUniqueName": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginFrontEnd\\TheStoreLoginFrontEnd.csproj",
       "projectName": "TheStoreLoginFrontEnd",
-      "projectPath": "C:\\Users\\lloyd\\source\\repos\\TheStoreLoginAPI\\TheStoreLoginFrontEnd\\TheStoreLoginFrontEnd.csproj",
+      "projectPath": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginFrontEnd\\TheStoreLoginFrontEnd.csproj",
       "packagesPath": "C:\\Users\\lloyd\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lloyd\\source\\repos\\TheStoreLoginAPI\\TheStoreLoginFrontEnd\\obj\\",
+      "outputPath": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginFrontEnd\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -1669,7 +1685,11 @@
       "frameworks": {
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\lloyd\\Desktop\\PSF\\StoreLogin.Shared\\StoreLogin.Shared.csproj": {
+              "projectPath": "C:\\Users\\lloyd\\Desktop\\PSF\\StoreLogin.Shared\\StoreLogin.Shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

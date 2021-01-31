@@ -1635,9 +1635,22 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "StoreLogin.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/StoreLogin.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StoreLogin.Shared.dll": {}
+        }
+      },
       "TheStoreLoginAPI/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "StoreLogin.Shared": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/TheStoreLoginAPI.dll": {}
         },
@@ -5716,6 +5729,11 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "StoreLogin.Shared/1.0.0": {
+      "type": "project",
+      "path": "../StoreLogin.Shared/StoreLogin.Shared.csproj",
+      "msbuildProject": "../StoreLogin.Shared/StoreLogin.Shared.csproj"
+    },
     "TheStoreLoginAPI/1.0.0": {
       "type": "project",
       "path": "../TheStoreLoginAPI/TheStoreLoginAPI.csproj",
@@ -5739,11 +5757,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lloyd\\source\\repos\\TheStoreLoginAPI\\TheStoreLoginTests\\TheStoreLoginTests.csproj",
+      "projectUniqueName": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginTests\\TheStoreLoginTests.csproj",
       "projectName": "TheStoreLoginTests",
-      "projectPath": "C:\\Users\\lloyd\\source\\repos\\TheStoreLoginAPI\\TheStoreLoginTests\\TheStoreLoginTests.csproj",
+      "projectPath": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginTests\\TheStoreLoginTests.csproj",
       "packagesPath": "C:\\Users\\lloyd\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lloyd\\source\\repos\\TheStoreLoginAPI\\TheStoreLoginTests\\obj\\",
+      "outputPath": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -5765,8 +5783,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\lloyd\\source\\repos\\TheStoreLoginAPI\\TheStoreLoginAPI\\TheStoreLoginAPI.csproj": {
-              "projectPath": "C:\\Users\\lloyd\\source\\repos\\TheStoreLoginAPI\\TheStoreLoginAPI\\TheStoreLoginAPI.csproj"
+            "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginAPI\\TheStoreLoginAPI.csproj": {
+              "projectPath": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginAPI\\TheStoreLoginAPI.csproj"
             }
           }
         }

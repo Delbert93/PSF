@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "StoreLogin.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/StoreLogin.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StoreLogin.Shared.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "StoreLogin.Shared/1.0.0": {
+      "type": "project",
+      "path": "../StoreLogin.Shared/StoreLogin.Shared.csproj",
+      "msbuildProject": "../StoreLogin.Shared/StoreLogin.Shared.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "StoreLogin.Shared >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\lloyd\\.nuget\\packages\\": {},
@@ -15,11 +34,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lloyd\\source\\repos\\TheStoreLoginAPI\\TheStoreLoginAPI\\TheStoreLoginAPI.csproj",
+      "projectUniqueName": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginAPI\\TheStoreLoginAPI.csproj",
       "projectName": "TheStoreLoginAPI",
-      "projectPath": "C:\\Users\\lloyd\\source\\repos\\TheStoreLoginAPI\\TheStoreLoginAPI\\TheStoreLoginAPI.csproj",
+      "projectPath": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginAPI\\TheStoreLoginAPI.csproj",
       "packagesPath": "C:\\Users\\lloyd\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lloyd\\source\\repos\\TheStoreLoginAPI\\TheStoreLoginAPI\\obj\\",
+      "outputPath": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -40,7 +59,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\lloyd\\Desktop\\PSF\\StoreLogin.Shared\\StoreLogin.Shared.csproj": {
+              "projectPath": "C:\\Users\\lloyd\\Desktop\\PSF\\StoreLogin.Shared\\StoreLogin.Shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

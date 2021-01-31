@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gDYTbtwiS9LeQC3ok8P8WWd46w4OjS8bYoV7riYbThXoY5AijzP7/pZcvnEdD5MlwwcAVc5BnQCQUiIRhx0CSA==",
+  "dgSpecHash": "JOMpqG95mXXBYFlK6rY65djkLnN9FGanJmWC22jXdSTpeqUnQu3y5t6WVl/CN3Gt1Wshr9aL+iHmRuhuTKWTug==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lloyd\\source\\repos\\TheStoreLoginAPI\\TheStoreLoginFrontEnd\\TheStoreLoginFrontEnd.csproj",
+  "projectFilePath": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginFrontEnd\\TheStoreLoginFrontEnd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lloyd\\.nuget\\packages\\microsoft.aspnetcore.authorization\\3.1.6\\microsoft.aspnetcore.authorization.3.1.6.nupkg.sha512",
     "C:\\Users\\lloyd\\.nuget\\packages\\microsoft.aspnetcore.components\\3.1.6\\microsoft.aspnetcore.components.3.1.6.nupkg.sha512",

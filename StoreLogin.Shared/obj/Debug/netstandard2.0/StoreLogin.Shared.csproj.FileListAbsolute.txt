@@ -1,0 +1,9 @@
+C:\Users\lloyd\Desktop\PSF\StoreLogin.Shared\bin\Debug\netstandard2.0\StoreLogin.Shared.deps.json
+C:\Users\lloyd\Desktop\PSF\StoreLogin.Shared\bin\Debug\netstandard2.0\StoreLogin.Shared.dll
+C:\Users\lloyd\Desktop\PSF\StoreLogin.Shared\bin\Debug\netstandard2.0\StoreLogin.Shared.pdb
+C:\Users\lloyd\Desktop\PSF\StoreLogin.Shared\obj\Debug\netstandard2.0\StoreLogin.Shared.csprojAssemblyReference.cache
+C:\Users\lloyd\Desktop\PSF\StoreLogin.Shared\obj\Debug\netstandard2.0\StoreLogin.Shared.AssemblyInfoInputs.cache
+C:\Users\lloyd\Desktop\PSF\StoreLogin.Shared\obj\Debug\netstandard2.0\StoreLogin.Shared.AssemblyInfo.cs
+C:\Users\lloyd\Desktop\PSF\StoreLogin.Shared\obj\Debug\netstandard2.0\StoreLogin.Shared.csproj.CoreCompileInputs.cache
+C:\Users\lloyd\Desktop\PSF\StoreLogin.Shared\obj\Debug\netstandard2.0\StoreLogin.Shared.dll
+C:\Users\lloyd\Desktop\PSF\StoreLogin.Shared\obj\Debug\netstandard2.0\StoreLogin.Shared.pdb

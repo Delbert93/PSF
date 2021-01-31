@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "wRZdbHLPxk4DcxuMyLK15UM3yL/9NFQgm0ICoWeakuWcVxD3ZVIucuGqCUmfoPTPyWLQ0F8fcIqJ+X4r+i4o/g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lloyd\\Desktop\\PSF\\StoreLogin.Shared\\StoreLogin.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lloyd\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

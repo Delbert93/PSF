@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StoreLogin.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TheStoreLoginAPI.Models;
 
 namespace TheStoreLoginAPI.Controllers
 {

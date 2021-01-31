@@ -1,4 +1,6 @@
 ﻿@page "/"
+@using StoreLogin.Shared
+@inject PublicApiService publicApi
 <h3>LoginPage</h3>
 
 
@@ -18,7 +20,20 @@
 
     private async Task LoginValidation()
     {
-        
+        if(System.Text.ASCIIEncoding.Unicode.GetByteCount(UsernameField) < 1000 && System.Text.ASCIIEncoding.Unicode.GetByteCount(PasswordField) < 1000)
+        {
+            var taintedUser = new TaintedUserModel()
+            {
+                username = UsernameField,
+                password = PasswordField
+            };
+            await publicApi.ValidateLogin(taintedUser);
+        }
+        else
+        {
+
+        }
+
     }
 
 }
