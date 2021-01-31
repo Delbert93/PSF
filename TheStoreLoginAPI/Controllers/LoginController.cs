@@ -11,17 +11,12 @@ namespace TheStoreLoginAPI.Controllers
     [ApiController]
     public class LoginController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         [HttpPost("[action]")]
-        public async Task LoginValidation(string inputUsername, string inputPassword)
+        public async Task LoginValidation(TaintedUserModel taintedUser)
         {
             UserModel userModel = new UserModel();
-            userModel.ValidateUsername(inputUsername);
-            userModel.ValidatePassword(inputPassword);
+            userModel.ValidateUsername(taintedUser.GetUsername());
+            userModel.ValidatePassword(taintedUser.GetPassword());
 
             if(userModel.isValidUsername == true && userModel.isValidPassword == true)
             {
