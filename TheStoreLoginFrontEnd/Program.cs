@@ -18,6 +18,7 @@ namespace TheStoreLoginFrontEnd
             builder.RootComponents.Add<App>("app");
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://localhost:5005") });
+            builder.Services.AddScoped<PublicApiService>();
 
             await builder.Build().RunAsync();
         }

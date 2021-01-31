@@ -98,12 +98,20 @@ using StoreLogin.Shared;
 
     private async Task LoginValidation()
     {
-        var taintedUser = new TaintedUserModel()
+        if(System.Text.ASCIIEncoding.Unicode.GetByteCount(UsernameField) < 1000 && System.Text.ASCIIEncoding.Unicode.GetByteCount(PasswordField) < 1000)
         {
-            username = UsernameField,
-            password = PasswordField
-        };
-        await publicApi.ValidateLogin(taintedUser);
+            var taintedUser = new TaintedUserModel()
+            {
+                username = UsernameField,
+                password = PasswordField
+            };
+            await publicApi.ValidateLogin(taintedUser);
+        }
+        else
+        {
+
+        }
+
     }
 
 
