@@ -20,17 +20,20 @@ namespace TheStoreLoginAPI
 
         public IConfiguration Configuration { get; }
 
+        readonly string MyAllowOrigins = "_myAllowSpecificOrigins";
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            
             services.AddCors(options =>
             {
-                options.AddDefaultPolicy(
-                    builder =>
-                    {
-                        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-                    });
+                options.AddPolicy(name: MyAllowOrigins,
+                                  builder =>
+                                  {
+                                      builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                                  });
             });
         }
 
@@ -50,10 +53,9 @@ namespace TheStoreLoginAPI
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
 
-            app.UseCors();
+            app.UseCors(MyAllowOrigins);
 
             app.UseAuthorization();
 
