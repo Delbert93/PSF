@@ -24,14 +24,7 @@ namespace TheStoreLoginAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddCors(options =>
-            {
-                options.AddDefaultPolicy(
-                    builder =>
-                    {
-                        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-                    });
-            });
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +46,12 @@ namespace TheStoreLoginAPI
 
             app.UseRouting();
 
-            app.UseCors();
+            // global cors policy
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true) // allow any origin
+                .AllowCredentials()); // allow credentials
 
             app.UseAuthorization();
 
