@@ -1,5 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TheStoreLoginAPI.Models;
+using StoreLogin.Shared;
 
 namespace TheStoreLoginTests
 {

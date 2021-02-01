@@ -161,6 +161,9 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
+              "C:\\Users\\lloyd\\Desktop\\PSF\\StoreLogin.Shared\\StoreLogin.Shared.csproj": {
+                "projectPath": "C:\\Users\\lloyd\\Desktop\\PSF\\StoreLogin.Shared\\StoreLogin.Shared.csproj"
+              },
               "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginAPI\\TheStoreLoginAPI.csproj": {
                 "projectPath": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginAPI\\TheStoreLoginAPI.csproj"
               }

@@ -200,3 +200,5 @@ C:\Users\lloyd\Desktop\PSF\TheStoreLoginTests\obj\Debug\netcoreapp3.1\TheStoreLo
 C:\Users\lloyd\Desktop\PSF\TheStoreLoginTests\obj\Debug\netcoreapp3.1\TheStoreLoginTests.dll
 C:\Users\lloyd\Desktop\PSF\TheStoreLoginTests\obj\Debug\netcoreapp3.1\TheStoreLoginTests.pdb
 C:\Users\lloyd\Desktop\PSF\TheStoreLoginTests\obj\Debug\netcoreapp3.1\TheStoreLoginTests.genruntimeconfig.cache
+C:\Users\lloyd\Desktop\PSF\TheStoreLoginTests\bin\Debug\netcoreapp3.1\StoreLogin.Shared.dll
+C:\Users\lloyd\Desktop\PSF\TheStoreLoginTests\bin\Debug\netcoreapp3.1\StoreLogin.Shared.pdb
