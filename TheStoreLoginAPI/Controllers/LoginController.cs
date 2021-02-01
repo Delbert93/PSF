@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using StoreLogin.Shared;
 using System;
 using System.Collections.Generic;
@@ -7,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace TheStoreLoginAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class LoginController : Controller
     {
         [HttpPost("[action]")]
@@ -24,9 +25,9 @@ namespace TheStoreLoginAPI.Controllers
             userModel.ValidateUsername(taintedUser.GetUsername());
             userModel.ValidatePassword(taintedUser.GetPassword());
 
-            if(userModel.isValidUsername == true && userModel.isValidPassword == true)
+            if (userModel.isValidUsername == true && userModel.isValidPassword == true)
             {
-                if(DBUserInfoLoginValidation(userModel))
+                if (DBUserInfoLoginValidation(userModel))
                 {
                     //tell UI "Login Successful;
                 }
@@ -47,7 +48,7 @@ namespace TheStoreLoginAPI.Controllers
             string AdminUsername = "XYZxyzwwwzyxzyx";
             string AdminPassword = "abcxyzefgqrshijtuv";
 
-            if(userModel.getUsername() == AdminUsername && userModel.getPassword() == AdminPassword)
+            if (userModel.getUsername() == AdminUsername && userModel.getPassword() == AdminPassword)
             {
                 return true;
             }

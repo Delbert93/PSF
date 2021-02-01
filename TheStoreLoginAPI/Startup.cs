@@ -25,6 +25,8 @@ namespace TheStoreLoginAPI
         {
             services.AddRazorPages();
 
+            services.AddControllers();
+
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(
@@ -44,7 +46,7 @@ namespace TheStoreLoginAPI
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            //app.UseStaticFiles();
             app.UseRouting();
 
             app.UseCors();
@@ -53,7 +55,7 @@ namespace TheStoreLoginAPI
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
         }
     }
