@@ -5751,25 +5751,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lloyd\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\jonat\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginTests\\TheStoreLoginTests.csproj",
+      "projectUniqueName": "C:\\git\\psf\\TheStoreLoginTests\\TheStoreLoginTests.csproj",
       "projectName": "TheStoreLoginTests",
-      "projectPath": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginTests\\TheStoreLoginTests.csproj",
-      "packagesPath": "C:\\Users\\lloyd\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginTests\\obj\\",
+      "projectPath": "C:\\git\\psf\\TheStoreLoginTests\\TheStoreLoginTests.csproj",
+      "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
+      "outputPath": "C:\\git\\psf\\TheStoreLoginTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\lloyd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -5784,11 +5785,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\lloyd\\Desktop\\PSF\\StoreLogin.Shared\\StoreLogin.Shared.csproj": {
-              "projectPath": "C:\\Users\\lloyd\\Desktop\\PSF\\StoreLogin.Shared\\StoreLogin.Shared.csproj"
+            "C:\\git\\psf\\StoreLogin.Shared\\StoreLogin.Shared.csproj": {
+              "projectPath": "C:\\git\\psf\\StoreLogin.Shared\\StoreLogin.Shared.csproj"
             },
-            "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginAPI\\TheStoreLoginAPI.csproj": {
-              "projectPath": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginAPI\\TheStoreLoginAPI.csproj"
+            "C:\\git\\psf\\TheStoreLoginAPI\\TheStoreLoginAPI.csproj": {
+              "projectPath": "C:\\git\\psf\\TheStoreLoginAPI\\TheStoreLoginAPI.csproj"
             }
           }
         }

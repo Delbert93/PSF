@@ -13,70 +13,70 @@ namespace TheStoreLoginFrontEnd.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\lloyd\Desktop\PSF\TheStoreLoginFrontEnd\_Imports.razor"
+#line 1 "C:\git\psf\TheStoreLoginFrontEnd\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\lloyd\Desktop\PSF\TheStoreLoginFrontEnd\_Imports.razor"
+#line 2 "C:\git\psf\TheStoreLoginFrontEnd\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\lloyd\Desktop\PSF\TheStoreLoginFrontEnd\_Imports.razor"
+#line 3 "C:\git\psf\TheStoreLoginFrontEnd\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\lloyd\Desktop\PSF\TheStoreLoginFrontEnd\_Imports.razor"
+#line 4 "C:\git\psf\TheStoreLoginFrontEnd\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\lloyd\Desktop\PSF\TheStoreLoginFrontEnd\_Imports.razor"
+#line 5 "C:\git\psf\TheStoreLoginFrontEnd\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\lloyd\Desktop\PSF\TheStoreLoginFrontEnd\_Imports.razor"
+#line 6 "C:\git\psf\TheStoreLoginFrontEnd\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\lloyd\Desktop\PSF\TheStoreLoginFrontEnd\_Imports.razor"
+#line 7 "C:\git\psf\TheStoreLoginFrontEnd\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\lloyd\Desktop\PSF\TheStoreLoginFrontEnd\_Imports.razor"
+#line 8 "C:\git\psf\TheStoreLoginFrontEnd\_Imports.razor"
 using TheStoreLoginFrontEnd;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\lloyd\Desktop\PSF\TheStoreLoginFrontEnd\_Imports.razor"
+#line 9 "C:\git\psf\TheStoreLoginFrontEnd\_Imports.razor"
 using TheStoreLoginFrontEnd.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\lloyd\Desktop\PSF\TheStoreLoginFrontEnd\Pages\LoginPage.razor"
+#line 2 "C:\git\psf\TheStoreLoginFrontEnd\Pages\LoginPage.razor"
 using StoreLogin.Shared;
 
 #line default
@@ -91,7 +91,7 @@ using StoreLogin.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 17 "C:\Users\lloyd\Desktop\PSF\TheStoreLoginFrontEnd\Pages\LoginPage.razor"
+#line 17 "C:\git\psf\TheStoreLoginFrontEnd\Pages\LoginPage.razor"
        
     private string UsernameField;
     private string PasswordField;
@@ -102,8 +102,8 @@ using StoreLogin.Shared;
         {
             var taintedUser = new TaintedUserModel()
             {
-                username = UsernameField,
-                password = PasswordField
+                Username = UsernameField,
+                Password = PasswordField
             };
             await publicApi.ValidateLogin(taintedUser);
         }

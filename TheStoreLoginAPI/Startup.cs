@@ -44,8 +44,11 @@ namespace TheStoreLoginAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseHttpsRedirection();
+            }
 
-            app.UseHttpsRedirection();
             //app.UseStaticFiles();
             app.UseRouting();
 

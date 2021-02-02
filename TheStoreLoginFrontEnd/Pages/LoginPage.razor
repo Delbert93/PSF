@@ -24,8 +24,8 @@
         {
             var taintedUser = new TaintedUserModel()
             {
-                username = UsernameField,
-                password = PasswordField
+                Username = UsernameField,
+                Password = PasswordField
             };
             await publicApi.ValidateLogin(taintedUser);
         }

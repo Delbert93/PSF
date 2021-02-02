@@ -7,3 +7,12 @@ C:\Users\lloyd\Desktop\PSF\StoreLogin.Shared\obj\Debug\netstandard2.0\StoreLogin
 C:\Users\lloyd\Desktop\PSF\StoreLogin.Shared\obj\Debug\netstandard2.0\StoreLogin.Shared.csproj.CoreCompileInputs.cache
 C:\Users\lloyd\Desktop\PSF\StoreLogin.Shared\obj\Debug\netstandard2.0\StoreLogin.Shared.dll
 C:\Users\lloyd\Desktop\PSF\StoreLogin.Shared\obj\Debug\netstandard2.0\StoreLogin.Shared.pdb
+C:\git\psf\StoreLogin.Shared\bin\Debug\netstandard2.0\StoreLogin.Shared.deps.json
+C:\git\psf\StoreLogin.Shared\bin\Debug\netstandard2.0\StoreLogin.Shared.dll
+C:\git\psf\StoreLogin.Shared\bin\Debug\netstandard2.0\StoreLogin.Shared.pdb
+C:\git\psf\StoreLogin.Shared\obj\Debug\netstandard2.0\StoreLogin.Shared.csprojAssemblyReference.cache
+C:\git\psf\StoreLogin.Shared\obj\Debug\netstandard2.0\StoreLogin.Shared.AssemblyInfoInputs.cache
+C:\git\psf\StoreLogin.Shared\obj\Debug\netstandard2.0\StoreLogin.Shared.AssemblyInfo.cs
+C:\git\psf\StoreLogin.Shared\obj\Debug\netstandard2.0\StoreLogin.Shared.csproj.CoreCompileInputs.cache
+C:\git\psf\StoreLogin.Shared\obj\Debug\netstandard2.0\StoreLogin.Shared.dll
+C:\git\psf\StoreLogin.Shared\obj\Debug\netstandard2.0\StoreLogin.Shared.pdb

@@ -6,16 +6,16 @@ namespace StoreLogin.Shared
 {
     public class TaintedUserModel
     {
-        public string username;
-        public string password;
+        public string Username { get; set; }
+        public string Password { get; set; }
 
         public string GetUsername()
         {
-            return this.username;
+            return this.Username;
         }
         public string GetPassword()
         {
-            return this.password;
+            return this.Password;
         }
     }
 }

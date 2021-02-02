@@ -13,7 +13,7 @@ namespace TheStoreLoginAPI.Controllers
     public class LoginController : Controller
     {
         [HttpPost("[action]")]
-        public async Task LoginValidation(TaintedUserModel taintedUser)
+        public IActionResult LoginValidation(TaintedUserModel taintedUser)
         {
             //var url = "https://delbert93.github.io/PSF/";
             //if (Request.Headers.Contains(url))
@@ -30,15 +30,18 @@ namespace TheStoreLoginAPI.Controllers
                 if (DBUserInfoLoginValidation(userModel))
                 {
                     //tell UI "Login Successful;
+                    return Ok();
                 }
                 else
                 {
                     //tell the UI "Invalid Username or Password"
+                    return BadRequest();
                 }
             }
             else
             {
                 //tell the UI "Invalid Username or Password"
+                return BadRequest();
             }
         }
 
@@ -59,5 +62,5 @@ namespace TheStoreLoginAPI.Controllers
 
         }
     }
-        
+
 }

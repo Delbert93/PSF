@@ -17,7 +17,9 @@ namespace TheStoreLoginFrontEnd
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("app");
 
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://lloyd-portfoli.herokuapp.com/") });
+            Console.WriteLine($"apiBaseAddress: {builder.Configuration["apiBaseAddress"]}");
+            System.Diagnostics.Debug.WriteLine($"apiBaseAddress: {builder.Configuration["apiBaseAddress"]}");
+            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.Configuration["apiBaseAddress"]) });
             builder.Services.AddScoped<PublicApiService>();
 
             await builder.Build().RunAsync();

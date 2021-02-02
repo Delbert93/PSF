@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fLx/YLomnjd0blkeRZNp9ucqvAE0t+Eiau5W/UrVTuh4Jehw1aKTxagKbnx+iK7q+gGZwyvsOQBJhLP49KSrzg==",
+  "dgSpecHash": "mcAtWGPnh+1bLuLx7Ai6uOid/2ATWH+gOqgrSuZZCxFzc9KwD8j6fP8r37enaz0ECRvg/Dn0QQh4x9ZoM4Bnxg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginAPI\\TheStoreLoginAPI.csproj",
+  "projectFilePath": "C:\\git\\psf\\TheStoreLoginAPI\\TheStoreLoginAPI.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

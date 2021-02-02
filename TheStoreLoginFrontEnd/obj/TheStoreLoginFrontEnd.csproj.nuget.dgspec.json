@@ -1,24 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginFrontEnd\\TheStoreLoginFrontEnd.csproj": {}
+    "C:\\git\\psf\\TheStoreLoginFrontEnd\\TheStoreLoginFrontEnd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lloyd\\Desktop\\PSF\\StoreLogin.Shared\\StoreLogin.Shared.csproj": {
+    "C:\\git\\psf\\StoreLogin.Shared\\StoreLogin.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lloyd\\Desktop\\PSF\\StoreLogin.Shared\\StoreLogin.Shared.csproj",
+        "projectUniqueName": "C:\\git\\psf\\StoreLogin.Shared\\StoreLogin.Shared.csproj",
         "projectName": "StoreLogin.Shared",
-        "projectPath": "C:\\Users\\lloyd\\Desktop\\PSF\\StoreLogin.Shared\\StoreLogin.Shared.csproj",
-        "packagesPath": "C:\\Users\\lloyd\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lloyd\\Desktop\\PSF\\StoreLogin.Shared\\obj\\",
+        "projectPath": "C:\\git\\psf\\StoreLogin.Shared\\StoreLogin.Shared.csproj",
+        "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
+        "outputPath": "C:\\git\\psf\\StoreLogin.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\lloyd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -66,21 +67,22 @@
         }
       }
     },
-    "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginFrontEnd\\TheStoreLoginFrontEnd.csproj": {
+    "C:\\git\\psf\\TheStoreLoginFrontEnd\\TheStoreLoginFrontEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginFrontEnd\\TheStoreLoginFrontEnd.csproj",
+        "projectUniqueName": "C:\\git\\psf\\TheStoreLoginFrontEnd\\TheStoreLoginFrontEnd.csproj",
         "projectName": "TheStoreLoginFrontEnd",
-        "projectPath": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginFrontEnd\\TheStoreLoginFrontEnd.csproj",
-        "packagesPath": "C:\\Users\\lloyd\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lloyd\\Desktop\\PSF\\TheStoreLoginFrontEnd\\obj\\",
+        "projectPath": "C:\\git\\psf\\TheStoreLoginFrontEnd\\TheStoreLoginFrontEnd.csproj",
+        "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
+        "outputPath": "C:\\git\\psf\\TheStoreLoginFrontEnd\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\lloyd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -95,8 +97,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "C:\\Users\\lloyd\\Desktop\\PSF\\StoreLogin.Shared\\StoreLogin.Shared.csproj": {
-                "projectPath": "C:\\Users\\lloyd\\Desktop\\PSF\\StoreLogin.Shared\\StoreLogin.Shared.csproj"
+              "C:\\git\\psf\\StoreLogin.Shared\\StoreLogin.Shared.csproj": {
+                "projectPath": "C:\\git\\psf\\StoreLogin.Shared\\StoreLogin.Shared.csproj"
               }
             }
           }
