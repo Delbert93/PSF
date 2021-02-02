@@ -32,7 +32,11 @@ namespace TheStoreLoginAPI
                 options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                        builder
+                            .WithOrigins("http://localhost:5000", "https://delbert93.github.io")
+                            .AllowAnyMethod()
+                            .AllowAnyHeader()
+                            .AllowCredentials();
                     });
             });
         }
