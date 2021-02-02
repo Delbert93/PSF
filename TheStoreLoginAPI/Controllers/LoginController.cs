@@ -12,6 +12,9 @@ namespace TheStoreLoginAPI.Controllers
     [Route("api/[controller]")]
     public class LoginController : Controller
     {
+        [HttpGet]
+        public string Get() => "It's up.";
+
         [HttpPost("[action]")]
         public IActionResult LoginValidation(TaintedUserModel taintedUser)
         {
