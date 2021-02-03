@@ -18,12 +18,6 @@ namespace TheStoreLoginAPI.Controllers
         [HttpPost("[action]")]
         public IActionResult LoginValidation(TaintedUserModel taintedUser)
         {
-            //var url = "https://delbert93.github.io/PSF/";
-            //if (Request.Headers.Contains(url))
-            //{
-            //    var values = Request.Headers.GetValues("Origin");
-            //    // Do stuff with the values... probably .FirstOrDefault()
-            //}
             UserModel userModel = new UserModel();
             userModel.ValidateUsername(taintedUser.GetUsername());
             userModel.ValidatePassword(taintedUser.GetPassword());
