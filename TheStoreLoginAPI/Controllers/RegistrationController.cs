@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using StoreLogin.Shared;
+using Microsoft.EntityFrameworkCore;
 
 namespace TheStoreLoginAPI.Controllers
 {
@@ -12,13 +13,13 @@ namespace TheStoreLoginAPI.Controllers
     [Route("api/[controller]")]
     public class RegistrationController : Controller
     {
+        [HttpGet]
+        public string Get() => "It's up also.";
+
         [HttpPost("[action]")]
         public IActionResult RegistrationValidation(TaintedUserModel taintedUser)
         {
-            UserModel userModel = new UserModel();
-            userModel.ValidateUsername(taintedUser.Username);
-            userModel.ValidatePassword(taintedUser.Password);
-            userModel.ValidateEmail(taintedUser.Email);
+            UserModel userModel = new UserModel(taintedUser.Username, taintedUser.Password, taintedUser.Email);
 
             if (userModel.isValidUsername == true && userModel.isValidPassword == true && userModel.isValidEmail)
             {
