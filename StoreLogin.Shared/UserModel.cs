@@ -13,10 +13,10 @@ namespace StoreLogin.Shared
         private readonly string password;
         private string email;
         private int gameCredit;
-        public bool readFlag = false;
-        public bool isValidPassword;
-        public bool isValidUsername;
-        public bool isValidEmail;
+        private bool readFlag = false;
+        private bool isValidPassword;
+        private bool isValidUsername;
+        private bool isValidEmail;
         public bool isValidUser;
 
         public UserModel(string _username, string _password)
@@ -55,7 +55,6 @@ namespace StoreLogin.Shared
                 email = _email;
             }
         }
-
         public void ValidatePassword(string _password)
         {
 

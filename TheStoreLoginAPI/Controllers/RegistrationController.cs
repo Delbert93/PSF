@@ -27,7 +27,11 @@ namespace TheStoreLoginAPI.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> RegistrationValidation(TaintedUserModel taintedUser)
         {
-            UserModel userModel = new UserModel(taintedUser.Username, taintedUser.Password, taintedUser.Email);
+            UserModel userModel = new UserBuilder()
+                .UseName(taintedUser.Username)
+                .UsePassword(taintedUser.Password)
+                .UseEmail(taintedUser.Email)
+                .BuildWithEmail();
 
             if (userModel.isValidUser == true)
             {
