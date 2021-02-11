@@ -1,8 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using StoreLogin.Shared;
 
 namespace TheStoreLoginAPI.Data
 {
@@ -11,5 +8,7 @@ namespace TheStoreLoginAPI.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> dbContextOptions) : base(dbContextOptions)
         {
         }
+
+        public DbSet<UserModel> Users { get; set; }
     }
 }
