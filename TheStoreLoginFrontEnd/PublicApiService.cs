@@ -29,5 +29,18 @@ namespace TheStoreLoginFrontEnd
                 return false;
             }
         }
+
+        public async Task<bool> ValidateRegistration(TaintedUserModel taintedUser)
+        {
+            var response = await client.PostAsJsonAsync("api/Registration/RegistrationValidation", taintedUser);
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

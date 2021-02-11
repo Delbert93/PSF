@@ -1,4 +1,8 @@
-﻿<h3>Registration For a Gaming Account</h3>
+﻿@page "/registration"
+@using StoreLogin.Shared
+@inject PublicApiService publicApi
+
+<h3>Registration For a Gaming Account</h3>
 
 <label for="uname"><b>Username</b></label>
 <textarea @bind="UsernameField"></textarea>
@@ -11,9 +15,35 @@
 @code {
     private string UsernameField;
     private string PasswordField;
+    private bool Response;
+    public string ResponseMessage;
 
     private async Task RegistrationValidation()
     {
+        if (System.Text.ASCIIEncoding.Unicode.GetByteCount(UsernameField) < 1000 && System.Text.ASCIIEncoding.Unicode.GetByteCount(PasswordField) < 1000)
+        {
+            var taintedUser = new TaintedUserModel()
+            {
+                Username = UsernameField,
+                Password = PasswordField
+            };
+            Response = await publicApi.ValidateLogin(taintedUser);
+            await RefreshProjectsAsync(Response);
+        }
+        else
+        {
 
+        }
+    }
+    private async Task RefreshProjectsAsync(bool Response)
+    {
+        if (Response)
+        {
+            ResponseMessage = "Registration Successful";
+        }
+        else
+        {
+            ResponseMessage = "Invalid Username or Password";
+        }
     }
 }
