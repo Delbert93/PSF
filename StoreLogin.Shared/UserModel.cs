@@ -13,7 +13,7 @@ namespace StoreLogin.Shared
 
         //strings are automatically immutable, but c#, under the hood, makes it seem like you can change it, when it's really just creating a new string
         private string username;
-        private string password;
+        private readonly string password;
         private string email;
         private int gameCredit;
         public bool readFlag = false;
@@ -25,6 +25,16 @@ namespace StoreLogin.Shared
         {
             ValidateUsername(_username);
             ValidatePassword(_password);
+
+            if(isValidPassword == true)
+            {
+                password = HashPassword(_password);
+            }
+
+            if(isValidUsername == true)
+            {
+                username = _username;
+            }
         }
         public UserModel(string _username, string _password, string _email)
         {
@@ -32,6 +42,21 @@ namespace StoreLogin.Shared
             ValidatePassword(_password);
             ValidateEmail(_email);
             gameCredit = 1500;
+
+            if (isValidPassword == true)
+            {
+                password = HashPassword(_password);
+            }
+
+            if (isValidUsername == true)
+            {
+                username = _username;
+            }
+
+            if (isValidEmail == true)
+            {
+                email = _email;
+            }
         }
 
         public void ValidatePassword(string _password)
@@ -44,7 +69,6 @@ namespace StoreLogin.Shared
             if (isValidated)
             {
                 isValidPassword = true;
-                this.password = HashPassword(_password);
             }
             else
             {
@@ -62,7 +86,6 @@ namespace StoreLogin.Shared
             if (isValidated)
             {
                 isValidUsername = true;
-                this.username = _username;
             }
             else
             {
@@ -108,7 +131,6 @@ namespace StoreLogin.Shared
                 MailAddress m = new MailAddress(_email);
 
                 isValidEmail = true;
-                this.email = _email;
             }
             catch (FormatException)
             {
