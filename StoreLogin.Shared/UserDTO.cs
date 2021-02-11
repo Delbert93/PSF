@@ -11,5 +11,6 @@ namespace StoreLogin.Shared
         public string password { get; set; }
         public string email { get; set; }
         public int gameCredit { get; set; }
+        public IEnumerable<UserDTO> users { get; set; }
     }
 }
