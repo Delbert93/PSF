@@ -12,11 +12,11 @@ namespace TheStoreLoginAPI.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> dbContextOptions) : base(dbContextOptions)
         {
         }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<UserModel>()
-                .HasIndex(x => x.username)
-                .IsUnique();
-        }
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<UserModel>()
+        //        .HasIndex(x => x.username)
+        //        .IsUnique();
+        //}
     }
 }

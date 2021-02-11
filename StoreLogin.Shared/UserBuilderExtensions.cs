@@ -24,9 +24,14 @@ namespace StoreLogin.Shared
             return ub;
         }
 
-        public static UserModel Build(this UserBuilder ub)
+        public static UserModel BuildWithEmail(this UserBuilder ub)
         {
             UserModel userModel = new UserModel(ub.Username, ub.Password, ub.Email);
+            return userModel;
+        }
+        public static UserModel Build(this UserBuilder ub)
+        {
+            UserModel userModel = new UserModel(ub.Username, ub.Password);
             return userModel;
         }
     }
