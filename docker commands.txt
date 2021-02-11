@@ -1,0 +1,26 @@
+REM remove/delete forcibly the pg container
+
+docker rm -f pg
+
+
+
+
+REM   -d means detached, it runs in the background
+REM   -p means map port 5432 on the local machine to post 5432 on the container
+REM   --name gives the container a name by which we can refer to it
+REM   -e lets you set an environment variable
+REM   -i means interactive
+REM   -t means psuedo tty (it will take input)
+REM   --rm means it will be automatically removed when stopped
+
+docker run -d -p 5432:5432 --name pg -e POSTGRES_PASSWORD=password --restart always postgres
+
+
+# Install the EntityFramework Core Tools
+dotnet tool install --global dotnet-ef
+
+# Create a migration
+dotnet ef migrations add SomeNameThatDescribesWhatYouChanged
+
+# If after installing the dotnet-ef tool you get an error when you run "dotnet ef" use this command
+~\.dotnet\tools\dotnet-ef.exe migrations add SomeNameThatDescribesWhatYouChanged
