@@ -1,0 +1,25 @@
+﻿using StoreLogin.Shared;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace TheStoreLoginAPI.Data
+{
+    public class EfCoreRepository : IRepository
+    {
+        private readonly ApplicationDbContext context;
+        public EfCoreRepository(ApplicationDbContext context)
+        {
+            this.context = context ?? throw new ArgumentException(nameof(context));
+        }
+
+        public IQueryable<UserDTO> Users => context.Users;
+
+        public async Task CreateUserAsync(UserDTO user)
+        {
+            context.Users.Add(user);
+            await context.SaveChangesAsync();
+        }
+    }
+}

@@ -108,6 +108,16 @@ namespace StoreLogin.Shared
             }
         }
 
+        public string getEmail()
+        {
+            return this.email;
+        }
+
+        public int getGameCredit()
+        {
+            return this.gameCredit;
+        }
+
         public string HashPassword(string password)
         {
             byte[] data = System.Text.Encoding.ASCII.GetBytes(password);
