@@ -9,13 +9,5 @@ namespace StoreLogin.Shared
         public string Username { get; set; }
         public string Password { get; set; }
 
-        public string GetUsername()
-        {
-            return this.Username;
-        }
-        public string GetPassword()
-        {
-            return this.Password;
-        }
     }
 }
