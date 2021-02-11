@@ -23,15 +23,17 @@ namespace StoreLogin.Shared
 
         public UserModel(string _username, string _password)
         {
-            username = _username;
-            password = _password;
+            ValidateUsername(_username);
+            ValidatePassword(_password);
         }
         public UserModel(string _username, string _password, string _email)
         {
-            username = _username;
-            password = _password;
+            ValidateUsername(_username);
+            ValidatePassword(_password);
+            ValidateEmail(_email);
             gameCredit = 1500;
         }
+
         public void ValidatePassword(string _password)
         {
 
@@ -42,7 +44,7 @@ namespace StoreLogin.Shared
             if (isValidated)
             {
                 isValidPassword = true;
-                this.password = _password;
+                this.password = HashPassword(_password);
             }
             else
             {
@@ -112,6 +114,7 @@ namespace StoreLogin.Shared
             {
                 isValidEmail = false;
             }
+
         }
     }
 }

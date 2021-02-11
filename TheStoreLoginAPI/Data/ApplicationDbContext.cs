@@ -11,5 +11,9 @@ namespace TheStoreLoginAPI.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> dbContextOptions) : base(dbContextOptions)
         {
         }
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity
+        //}
     }
 }
