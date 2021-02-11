@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -12,10 +13,12 @@ namespace StoreLogin.Shared
         //strings are automatically immutable, but c#, under the hood, makes it seem like you can change it, when it's really just creating a new string
         private string username;
         private string password;
+        private string email;
         private int gameCredit;
         public bool readFlag = false;
         public bool isValidPassword;
         public bool isValidUsername;
+        public bool isValidEmail;
 
 
         public void ValidatePassword(string _password)
@@ -72,12 +75,32 @@ namespace StoreLogin.Shared
             }
         }
 
-        public string hashPassword(string password)
+        public string HashPassword(string password)
         {
             byte[] data = System.Text.Encoding.ASCII.GetBytes(password);
             data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
             String hash = System.Text.Encoding.ASCII.GetString(data);
             return hash;
+        }
+
+        public bool ValidateCredits()
+        {
+            return true;
+        }
+
+        public void ValidateEmail(string _email)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(_email);
+
+                isValidEmail = true;
+                this.email = _email;
+            }
+            catch (FormatException)
+            {
+                isValidEmail = false;
+            }
         }
     }
 }
