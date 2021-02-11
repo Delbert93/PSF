@@ -8,6 +8,7 @@ namespace StoreLogin.Shared
 {
     public class UserModel
     {
+       
 
         //strings are automatically immutable, but c#, under the hood, makes it seem like you can change it, when it's really just creating a new string
         private string username;
@@ -17,7 +18,17 @@ namespace StoreLogin.Shared
         public bool isValidPassword;
         public bool isValidUsername;
 
-
+        public UserModel(string _username, string _password)
+        {
+            username = _username;
+            password = _password;
+        }
+        public UserModel(string _username, string _password, string _email)
+        {
+            username = _username;
+            password = _password;
+            gameCredit = 1500;
+        }
         public void ValidatePassword(string _password)
         {
 
