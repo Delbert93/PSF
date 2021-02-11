@@ -1,5 +1,33 @@
 ﻿<h3>SlotMachinePage</h3>
 
+<button type="submit" @onclick="() => SlotMachine(1)">Bet $1</button>
+<button type="submit" @onclick="() => SlotMachine(10)">Bet $10</button>
+<button type="submit" @onclick="() => SlotMachine(100)">Bet $100</button>
+
 @code {
+    private readonly Random _random = new Random();
+
+    public void SlotMachine(int bet)
+    {
+        int numOne = _random.Next(0, 9);
+        int numTwo = _random.Next(0, 9);
+        int numThree = _random.Next(0, 9);
+
+        if (numOne == numTwo && numOne == numThree)
+        {
+            CalculateWinnings(bet);
+
+        }
+        else
+        {
+
+        }
+    }
+
+    public int CalculateWinnings(int bet)
+    {
+        int winnings = bet * 50;
+        return winnings;
+    }
 
 }
