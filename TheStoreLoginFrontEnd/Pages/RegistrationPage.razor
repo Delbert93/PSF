@@ -1,0 +1,19 @@
+﻿<h3>Registration For a Gaming Account</h3>
+
+<label for="uname"><b>Username</b></label>
+<textarea @bind="UsernameField"></textarea>
+
+<label for="psw"><b>Password</b></label>
+<textarea @bind="PasswordField"></textarea>
+
+<button type="submit" @onclick="RegistrationValidation">Login</button>
+
+@code {
+    private string UsernameField;
+    private string PasswordField;
+
+    private async Task RegistrationValidation()
+    {
+
+    }
+}

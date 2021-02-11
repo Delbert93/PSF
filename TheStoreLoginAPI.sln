@@ -12,7 +12,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheStoreLoginTests", "TheSt
 		{2516D4BC-8615-49F0-BFBC-A750742B5E10} = {2516D4BC-8615-49F0-BFBC-A750742B5E10}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreLogin.Shared", "StoreLogin.Shared\StoreLogin.Shared.csproj", "{7A25006D-94B0-4DB5-97F5-FFBDEC3E8397}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreLogin.Shared", "StoreLogin.Shared\StoreLogin.Shared.csproj", "{7A25006D-94B0-4DB5-97F5-FFBDEC3E8397}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

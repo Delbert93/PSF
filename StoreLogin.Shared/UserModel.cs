@@ -13,6 +13,7 @@ namespace StoreLogin.Shared
         //strings are automatically immutable, but c#, under the hood, makes it seem like you can change it, when it's really just creating a new string
         private string username;
         private string password;
+        private int gameCredit;
         public bool readFlag = false;
         public bool isValidPassword;
         public bool isValidUsername;
@@ -70,6 +71,14 @@ namespace StoreLogin.Shared
                 Trace.WriteLine("Cannot read this object more than once");
                 return null;
             }
+        }
+
+        public string hashPassword(string password)
+        {
+            byte[] data = System.Text.Encoding.ASCII.GetBytes(password);
+            data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+            String hash = System.Text.Encoding.ASCII.GetString(data);
+            return hash;
         }
     }
 }
