@@ -14,12 +14,12 @@
     <button type="submit" @onclick="LoginValidation">Login</button>
 </div>
 <br />
-<h1>@ResponseMessage</h1>
+<text style="color:red;">@ResponseMessage</text>
 
 @code {
     private string UsernameField;
     private string PasswordField;
-    private bool Resposne;
+    private bool Response;
     public string ResponseMessage;
 
     private async Task LoginValidation()
@@ -31,8 +31,8 @@
                 Username = UsernameField,
                 Password = PasswordField
             };
-            Resposne = await publicApi.ValidateLogin(taintedUser);
-            await RefreshProjectsAsync(Resposne);
+            Response = await publicApi.ValidateLogin(taintedUser);
+            await RefreshProjectsAsync(Response);
         }
         else
         {
@@ -40,15 +40,15 @@
         }
     }
 
-    private async Task RefreshProjectsAsync(bool Respone)
+    private async Task RefreshProjectsAsync(bool Response)
     {
-        if (Resposne)
+        if (Response)
         {
-            ResponseMessage = "You made it in!";
+            ResponseMessage = "Login Successful";
         }
         else
         {
-            ResponseMessage = "Are you trying to hack me?";
+            ResponseMessage = "Invalid Username or Password";
         }
     }
 
