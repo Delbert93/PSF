@@ -10,7 +10,7 @@ namespace TheStoreLoginAPI.Controllers
 
     [ApiController]
     [Route("api/[controller]")]
-    public class RegistrationContoller : Controller
+    public class RegistrationController : Controller
     {
         [HttpPost("[action]")]
         public IActionResult RegistrationValidation(TaintedUserModel taintedUser)
@@ -18,8 +18,9 @@ namespace TheStoreLoginAPI.Controllers
             UserModel userModel = new UserModel();
             userModel.ValidateUsername(taintedUser.Username);
             userModel.ValidatePassword(taintedUser.Password);
+            userModel.ValidateEmail(taintedUser.Email);
 
-            if (userModel.isValidUsername == true && userModel.isValidPassword == true)
+            if (userModel.isValidUsername == true && userModel.isValidPassword == true && userModel.isValidEmail)
             {
                 if (DBUserInfoLoginValidation(userModel))
                 {
