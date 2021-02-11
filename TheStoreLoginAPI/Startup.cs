@@ -36,7 +36,7 @@ namespace TheStoreLoginAPI
                     builder =>
                     {
                         builder
-                            .WithOrigins("http://localhost:5000", "https://delbert93.github.io")
+                            .WithOrigins("http://localhost:62788", "http://localhost:5000", "https://delbert93.github.io")
                             .AllowAnyMethod()
                             .AllowAnyHeader()
                             .AllowCredentials();

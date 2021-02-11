@@ -13,27 +13,43 @@
 
     <button type="submit" @onclick="LoginValidation">Login</button>
 </div>
+<br />
+<h1>@ResponseMessage</h1>
 
 @code {
     private string UsernameField;
     private string PasswordField;
+    private bool Resposne;
+    public string ResponseMessage;
 
     private async Task LoginValidation()
     {
-        if(System.Text.ASCIIEncoding.Unicode.GetByteCount(UsernameField) < 1000 && System.Text.ASCIIEncoding.Unicode.GetByteCount(PasswordField) < 1000)
+        if (System.Text.ASCIIEncoding.Unicode.GetByteCount(UsernameField) < 1000 && System.Text.ASCIIEncoding.Unicode.GetByteCount(PasswordField) < 1000)
         {
             var taintedUser = new TaintedUserModel()
             {
                 Username = UsernameField,
                 Password = PasswordField
             };
-            await publicApi.ValidateLogin(taintedUser);
+            Resposne = await publicApi.ValidateLogin(taintedUser);
+            await RefreshProjectsAsync(Resposne);
         }
         else
         {
 
         }
+    }
 
+    private async Task RefreshProjectsAsync(bool Respone)
+    {
+        if (Resposne)
+        {
+            ResponseMessage = "You made it in!";
+        }
+        else
+        {
+            ResponseMessage = "Are you trying to hack me?";
+        }
     }
 
 }

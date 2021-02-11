@@ -17,9 +17,17 @@ namespace TheStoreLoginFrontEnd
             this.client = client;
         }
 
-        public async Task ValidateLogin(TaintedUserModel taintedUser)
+        public async Task<bool> ValidateLogin(TaintedUserModel taintedUser)
         {
-            await client.PostAsJsonAsync("api/Login/LoginValidation", taintedUser);
+            var response = await client.PostAsJsonAsync("api/Login/LoginValidation", taintedUser);
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
