@@ -10,11 +10,15 @@
 <label for="psw"><b>Password</b></label>
 <textarea @bind="PasswordField"></textarea>
 
+<label for="psw"><b>Email</b></label>
+<textarea @bind="EmailField"></textarea>
+
 <button type="submit" @onclick="RegistrationValidation">Login</button>
 
 @code {
     private string UsernameField;
     private string PasswordField;
+    private string EmailField;
     private bool Response;
     public string ResponseMessage;
 
@@ -25,9 +29,10 @@
             var taintedUser = new TaintedUserModel()
             {
                 Username = UsernameField,
-                Password = PasswordField
+                Password = PasswordField,
+                Email = EmailField
             };
-            Response = await publicApi.ValidateLogin(taintedUser);
+            Response = await publicApi.ValidateRegistration(taintedUser);
             await RefreshProjectsAsync(Response);
         }
         else
