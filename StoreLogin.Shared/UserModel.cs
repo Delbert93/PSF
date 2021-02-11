@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -11,7 +12,9 @@ namespace StoreLogin.Shared
     {
 
         //strings are automatically immutable, but c#, under the hood, makes it seem like you can change it, when it's really just creating a new string
-        private string username;
+        [Key]
+        public string username;
+
         private string password;
         private int gameCredit;
         public bool readFlag = false;

@@ -10,5 +10,11 @@ namespace TheStoreLoginAPI.Data
         }
 
         public DbSet<UserModel> Users { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<UserModel>()
+                .HasKey(u => new { u.username });
+        }
     }
 }
