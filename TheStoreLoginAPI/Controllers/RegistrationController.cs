@@ -21,7 +21,7 @@ namespace TheStoreLoginAPI.Controllers
         {
             UserModel userModel = new UserModel(taintedUser.Username, taintedUser.Password, taintedUser.Email);
 
-            if (userModel.isValidUsername == true && userModel.isValidPassword == true && userModel.isValidEmail)
+            if (userModel.isValidUser == true)
             {
                 if (DBUserInfoLoginValidation(userModel))
                 {
