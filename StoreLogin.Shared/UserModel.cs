@@ -12,7 +12,7 @@ namespace StoreLogin.Shared
        
 
         //strings are automatically immutable, but c#, under the hood, makes it seem like you can change it, when it's really just creating a new string
-        private string username;
+        public string username;
         private string password;
         private string email;
         private int gameCredit;
