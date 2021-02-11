@@ -9,9 +9,6 @@ namespace StoreLogin.Shared
 {
     public class UserModel
     {
-       
-
-        //strings are automatically immutable, but c#, under the hood, makes it seem like you can change it, when it's really just creating a new string
         private string username;
         private readonly string password;
         private string email;
@@ -20,41 +17,41 @@ namespace StoreLogin.Shared
         public bool isValidPassword;
         public bool isValidUsername;
         public bool isValidEmail;
+        public bool isValidUser;
 
         public UserModel(string _username, string _password)
         {
+            isValidUser = false;
+            isValidUsername = false;
+            isValidPassword = false;
+            isValidEmail = true;
+
             ValidateUsername(_username);
             ValidatePassword(_password);
+            ValidateUser();
 
-            if(isValidPassword == true)
+            if(isValidUser == true)
             {
                 password = HashPassword(_password);
-            }
-
-            if(isValidUsername == true)
-            {
                 username = _username;
             }
         }
         public UserModel(string _username, string _password, string _email)
         {
+            isValidUser = false;
+            isValidUsername = false;
+            isValidPassword = false;
+            isValidEmail = false;
+
             ValidateUsername(_username);
             ValidatePassword(_password);
             ValidateEmail(_email);
             gameCredit = 1500;
 
-            if (isValidPassword == true)
+            if (isValidUser == true)
             {
                 password = HashPassword(_password);
-            }
-
-            if (isValidUsername == true)
-            {
                 username = _username;
-            }
-
-            if (isValidEmail == true)
-            {
                 email = _email;
             }
         }
@@ -137,6 +134,18 @@ namespace StoreLogin.Shared
                 isValidEmail = false;
             }
 
+        }
+
+        public void ValidateUser()
+        {
+            if(isValidUsername == true && isValidPassword == true && isValidEmail == true)
+            {
+                isValidUser = true;
+            }
+            else
+            {
+                isValidUser = false;
+            }
         }
     }
 }
