@@ -22,17 +22,20 @@
     int numThree = 0;
     public void SlotMachine(int bet)
     {
-        numOne = _random.Next(0, 9);
-        numTwo = _random.Next(0, 9);
-        numThree = _random.Next(0, 9);
+        if (userSnapshot.gameCredit >= bet)
+        {
+            numOne = _random.Next(0, 9);
+            numTwo = _random.Next(0, 9);
+            numThree = _random.Next(0, 9);
 
-        if (numOne == numTwo && numOne == numThree)
-        {
-            userSnapshot.gameCredit += CalculateWinnings(bet);
-        }
-        else
-        {
-            userSnapshot.gameCredit -= bet;
+            if (numOne == numTwo && numOne == numThree)
+            {
+                userSnapshot.gameCredit += CalculateWinnings(bet);
+            }
+            else
+            {
+                userSnapshot.gameCredit -= bet;
+            }
         }
     }
 
