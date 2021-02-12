@@ -14,6 +14,8 @@
 <textarea @bind="EmailField"></textarea>
 
 <button type="submit" @onclick="RegistrationValidation">Login</button>
+<br />
+<text style="color:red;">@ResponseMessage</text>
 
 @code {
     private string UsernameField;

@@ -26,6 +26,7 @@ namespace TheStoreLoginAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql(convertUrlConnectionString(Configuration["DATABASE_URL"])));
+            services.AddTransient<IRepository, EfCoreRepository>();
             services.AddRazorPages();
 
             services.AddControllers();

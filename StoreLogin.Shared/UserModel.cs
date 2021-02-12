@@ -47,6 +47,7 @@ namespace StoreLogin.Shared
             ValidatePassword(_password);
             ValidateEmail(_email);
             gameCredit = 1500;
+            ValidateUser();
 
             if (isValidUser == true)
             {
