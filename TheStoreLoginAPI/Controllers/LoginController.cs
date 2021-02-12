@@ -28,6 +28,7 @@ namespace TheStoreLoginAPI.Controllers
                 if (DBUserInfoLoginValidation(userModel))
                 {
                     //tell UI "Login Successful;
+                    UserSnapshot userSnapshot = new UserSnapshot(userModel.getUsername()) { gameCredit = userModel.getGameCredit() };
                     return Ok();
                 }
                 else

@@ -1,15 +1,21 @@
 ﻿@page "/"
+@inject TheStoreLoginFrontEnd.PublicApiService projectApi
+@using StoreLogin.Shared
 <h3>SlotMachinePage</h3>
-@*<div>Total Credits: <h4>@userSnapshot.gameCredit</h4></div>*@
+<div>Total Credits: <h4>@userSnapshot.gameCredit</h4></div>
 
 <button type="submit" @onclick="() => SlotMachine(1)">Bet $1</button>
 <button type="submit" @onclick="() => SlotMachine(10)">Bet $10</button>
 <button type="submit" @onclick="() => SlotMachine(100)">Bet $100</button>
-<div>@numOne</div>
-<div>@numTwo</div>
-<div>@numThree</div>
+<br />
+<span>@numOne</span>
+<span>@numTwo</span>
+<span>@numThree</span>
+<br />
+<button type="submit" @onclick="() => Cashout()">Cashout</button>
 
 @code {
+    private UserSnapshot userSnapshot = new UserSnapshot("Username") {gameCredit = 1500 };
     private readonly Random _random = new Random();
     int numOne = 0;
     int numTwo = 0;
@@ -22,11 +28,11 @@
 
         if (numOne == numTwo && numOne == numThree)
         {
-            CalculateWinnings(bet);
+            userSnapshot.gameCredit += CalculateWinnings(bet);
         }
         else
         {
-
+            userSnapshot.gameCredit -= bet;
         }
     }
 
@@ -34,6 +40,11 @@
     {
         int winnings = bet * 50;
         return winnings;
+    }
+
+    public void Cashout()
+    {
+        //send this back through login to update datebase
     }
 
 }
