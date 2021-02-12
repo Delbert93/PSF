@@ -1,23 +1,28 @@
 ﻿@page "/"
 <h3>SlotMachinePage</h3>
+@*<div>Total Credits: <h4>@userSnapshot.gameCredit</h4></div>*@
 
 <button type="submit" @onclick="() => SlotMachine(1)">Bet $1</button>
 <button type="submit" @onclick="() => SlotMachine(10)">Bet $10</button>
 <button type="submit" @onclick="() => SlotMachine(100)">Bet $100</button>
+<div>@numOne</div>
+<div>@numTwo</div>
+<div>@numThree</div>
 
 @code {
     private readonly Random _random = new Random();
-
+    int numOne = 0;
+    int numTwo = 0;
+    int numThree = 0;
     public void SlotMachine(int bet)
     {
-        int numOne = _random.Next(0, 9);
-        int numTwo = _random.Next(0, 9);
-        int numThree = _random.Next(0, 9);
+        numOne = _random.Next(0, 9);
+        numTwo = _random.Next(0, 9);
+        numThree = _random.Next(0, 9);
 
         if (numOne == numTwo && numOne == numThree)
         {
             CalculateWinnings(bet);
-
         }
         else
         {
