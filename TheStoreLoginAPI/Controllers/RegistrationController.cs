@@ -24,7 +24,7 @@ namespace TheStoreLoginAPI.Controllers
         public async Task<IEnumerable<UserDTO>> Get() => await repository.Users.ToListAsync();
 
         [HttpPost("[action]")]
-        public IActionResult RegistrationValidation(TaintedUserModel taintedUser)
+        public async Task<IActionResult> RegistrationValidation(TaintedUserModel taintedUser)
         {
             UserModel userModel = new UserBuilder()
                 .UseName(taintedUser.Username)
@@ -36,11 +36,11 @@ namespace TheStoreLoginAPI.Controllers
             {
                 //tell UI "Login Successful;
                 UserDTO userDTO = new UserDTO();
-                userDTO.username = userModel.getUsername();
-                userDTO.password = userModel.HashPassword(userModel.getPassword());
-                userDTO.email = userModel.getEmail();
-                userDTO.gameCredit = userModel.getGameCredit();
-                repository.CreateUserAsync(userDTO);
+                userDTO.Username = userModel.getUsername();
+                userDTO.Password = userModel.HashPassword(userModel.getPassword());
+                userDTO.Email = userModel.getEmail();
+                userDTO.GameCredit = userModel.getGameCredit();
+                await repository.CreateUserAsync(userDTO);
                 return Ok();
             }
             else

@@ -1,16 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace StoreLogin.Shared
 {
     public class UserDTO
     {
-        public int id { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
-        public string email { get; set; }
-        public int gameCredit { get; set; }
-        public IEnumerable<UserDTO> users { get; set; }
+        [JsonPropertyName("id")]
+        public int Id { get; set; }
+
+        [JsonPropertyName("username")]
+        public string Username { get; set; }
+
+        [JsonPropertyName("password")]
+        public string Password { get; set; }
+
+        [JsonPropertyName("email")]
+        public string Email { get; set; }
+
+        [JsonPropertyName("gameCredit")]
+        public int GameCredit { get; set; }
+        //public IEnumerable<UserDTO> users { get; set; }
     }
 }

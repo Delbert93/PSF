@@ -13,13 +13,19 @@ namespace TheStoreLoginAPI.Data
         {
             this.context = context ?? throw new ArgumentException(nameof(context));
         }
-
         public IQueryable<UserDTO> Users => context.Users;
 
         public async Task CreateUserAsync(UserDTO user)
         {
-            context.Users.Add(user);
-            await context.SaveChangesAsync();
+            try
+            {
+                context.Users.Add(user);
+                await context.SaveChangesAsync();
+            }
+            catch(Exception e)
+            {
+
+            }
         }
     }
 }

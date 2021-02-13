@@ -20,24 +20,24 @@ namespace TheStoreLoginAPI.Migrations
 
             modelBuilder.Entity("StoreLogin.Shared.UserDTO", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<string>("email")
+                    b.Property<string>("Email")
                         .HasColumnType("text");
 
-                    b.Property<int>("gameCredit")
+                    b.Property<int>("GameCredit")
                         .HasColumnType("integer");
 
-                    b.Property<string>("password")
+                    b.Property<string>("Password")
                         .HasColumnType("text");
 
-                    b.Property<string>("username")
+                    b.Property<string>("Username")
                         .HasColumnType("text");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("Users");
                 });

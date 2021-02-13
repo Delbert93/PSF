@@ -1,6 +1,7 @@
 ﻿@page "/registration"
 @using StoreLogin.Shared
 @inject PublicApiService publicApi
+@inject HttpClient http
 
 <h3>Registration For a Gaming Account</h3>
 
@@ -16,6 +17,7 @@
 <button type="submit" @onclick="RegistrationValidation">Login</button>
 <br />
 <text style="color:red;">@ResponseMessage</text>
+
 
 @code {
     private string UsernameField;
