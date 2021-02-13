@@ -21,6 +21,5 @@ namespace StoreLogin.Shared
 
         [JsonPropertyName("gameCredit")]
         public int GameCredit { get; set; }
-        //public IEnumerable<UserDTO> users { get; set; }
     }
 }

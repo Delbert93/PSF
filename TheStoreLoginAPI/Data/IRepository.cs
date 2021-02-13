@@ -9,6 +9,7 @@ namespace TheStoreLoginAPI.Data
     public interface IRepository
     {
         IQueryable<UserDTO> Users { get; }
+
         Task CreateUserAsync(UserDTO user);
     }
 }

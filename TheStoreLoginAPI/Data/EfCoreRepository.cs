@@ -24,7 +24,6 @@ namespace TheStoreLoginAPI.Data
             }
             catch(Exception e)
             {
-
             }
         }
     }
