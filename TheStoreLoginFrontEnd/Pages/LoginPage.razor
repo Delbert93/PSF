@@ -1,6 +1,7 @@
 ﻿@page "/login"
 @using StoreLogin.Shared
 @inject PublicApiService publicApi
+@inject NavigationManager NavigationManager
 <h3>LoginPage</h3>
 
 
@@ -45,6 +46,7 @@
         if (Response)
         {
             ResponseMessage = "Login Successful";
+            NavigationManager.NavigateTo("/", true);
         }
         else
         {
