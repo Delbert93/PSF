@@ -17,7 +17,7 @@ namespace TheStoreLoginFrontEnd
         public static async Task Main(string[] args)
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
-            var baseAddress = builder.Configuration["apiBaseAddress"];
+            //var baseAddress = builder.Configuration["apiBaseAddress"];
             builder.RootComponents.Add<App>("app");
 
             Console.WriteLine($"apiBaseAddress: {builder.Configuration["apiBaseAddress"]}");
@@ -25,7 +25,7 @@ namespace TheStoreLoginFrontEnd
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.Configuration["apiBaseAddress"]) });
             builder.Services.AddScoped<PublicApiService>();
 
-            builder.Services.AddHttpClient<PublicApiService>(b => b.BaseAddress = new Uri(baseAddress))
+            builder.Services.AddHttpClient<PublicApiService>(builder.Configuration["apiBaseAddress"])
                .SetHandlerLifetime(TimeSpan.FromMinutes(5))  //Sample. Default lifetime is 2 minutes
                .AddPolicyHandler(GetRetryPolicy())
                .AddPolicyHandler(GetCircuitBreakerPolicy());
