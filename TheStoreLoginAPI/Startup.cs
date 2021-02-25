@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.FeatureManagement;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,8 @@ namespace TheStoreLoginAPI
             services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql(convertUrlConnectionString(Configuration["DATABASE_URL"])));
             services.AddScoped<IRepository, EfCoreRepository>();
             services.AddRazorPages();
+
+            services.AddFeatureManagement();
 
             services.AddControllers();
 
