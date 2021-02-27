@@ -8,20 +8,41 @@ namespace StoreLogin.Shared
     {
         public static UserBuilder UseName(this UserBuilder ub, string username)
         {
+            if (System.Text.ASCIIEncoding.Unicode.GetByteCount(username) < 1000)
+            {
                 ub.Username = username;
                 return ub;
+            }
+            else
+            {
+                return ub;
+            }
         }
 
         public static UserBuilder UsePassword(this UserBuilder ub, string password)
         {
-            ub.Password = password;
-            return ub;
+            if (System.Text.ASCIIEncoding.Unicode.GetByteCount(password) < 1000)
+            {
+                ub.Password = password;
+                return ub;
+            }
+            else
+            {
+                return ub;
+            }
         }
 
         public static UserBuilder UseEmail(this UserBuilder ub, string email)
         {
-            ub.Email = email;
-            return ub;
+            if (System.Text.ASCIIEncoding.Unicode.GetByteCount(email) < 1000)
+            {
+                ub.Email = email;
+                return ub;
+            }
+            else
+            {
+                return ub;
+            }
         }
         public static UserModel Build(this UserBuilder ub)
         {

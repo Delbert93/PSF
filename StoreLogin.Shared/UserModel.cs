@@ -62,7 +62,7 @@ namespace StoreLogin.Shared
             Regex objAlphaPattern = new Regex(@"^[a-zA-Z0-9]*$");
             var hasMinimum12Chars = new Regex(@".{12,}");
 
-            var isValidated = objAlphaPattern.IsMatch(_password) && hasMinimum12Chars.IsMatch(_password);
+            var isValidated = objAlphaPattern.IsMatch(_password) && hasMinimum12Chars.IsMatch(_password) && String.IsNullOrEmpty(_password) != true;
             if (isValidated)
             {
                 isValidPassword = true;
@@ -78,7 +78,7 @@ namespace StoreLogin.Shared
 
             Regex objAlphaPattern = new Regex(@"^[a-zA-Z0-9]*$");
             var hasMinimum8Chars = new Regex(@".{8,}");
-            var isValidated = objAlphaPattern.IsMatch(_username) && hasMinimum8Chars.IsMatch(_username) && System.Text.ASCIIEncoding.Unicode.GetByteCount(_username) < 1000;
+            var isValidated = objAlphaPattern.IsMatch(_username) && hasMinimum8Chars.IsMatch(_username) && String.IsNullOrEmpty(_username) != true;
 
             if (isValidated)
             {
