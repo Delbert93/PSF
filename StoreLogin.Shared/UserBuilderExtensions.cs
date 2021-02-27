@@ -15,6 +15,7 @@ namespace StoreLogin.Shared
             }
             else
             {
+                ub.Username = "a";
                 return ub;
             }
         }
@@ -28,6 +29,7 @@ namespace StoreLogin.Shared
             }
             else
             {
+                ub.Password = "a";
                 return ub;
             }
         }
@@ -41,6 +43,7 @@ namespace StoreLogin.Shared
             }
             else
             {
+                ub.Email = "a";
                 return ub;
             }
         }
