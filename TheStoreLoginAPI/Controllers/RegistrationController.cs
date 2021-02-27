@@ -30,7 +30,7 @@ namespace TheStoreLoginAPI.Controllers
                 .UseName(taintedUser.Username)
                 .UsePassword(taintedUser.Password)
                 .UseEmail(taintedUser.Email)
-                .BuildWithEmail();
+                .Build();
 
             if (userModel.isValidUser == true)
             {

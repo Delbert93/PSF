@@ -9,10 +9,10 @@ namespace TheStoreLoginTests
         [TestMethod]
         public void ValidateUserName()
         {
-            //string badLengthUserName = "hellow";
-            //string badCharUserName = "hellooooow!";
-            //string goodUserName = "mckinnin";
-            //UserModel userModel = new UserModel();
+            string badLengthUserName = "hellow";
+            string badCharUserName = "hellooooow!";
+            string goodUserName = "mckinnin";
+            UserModel userModel = new UserModel();
 
             //userModel.ValidateUsername(badLengthUserName);
             //Assert.IsFalse(userModel.isValidUsername);
