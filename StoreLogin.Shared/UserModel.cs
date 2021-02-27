@@ -154,6 +154,7 @@ namespace StoreLogin.Shared
             }
             else
             {
+                Result.Fail("Invalid Username or Password");
                 isValidUser = false;
             }
         }
