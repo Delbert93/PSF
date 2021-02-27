@@ -17,7 +17,7 @@ namespace TheStoreLoginFrontEnd
         public static async Task Main(string[] args)
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
-            //var baseAddress = builder.Configuration["apiBaseAddress"];
+            var baseAddress = builder.Configuration["apiBaseAddress"];
             builder.RootComponents.Add<App>("app");
 
             Console.WriteLine($"apiBaseAddress: {builder.Configuration["apiBaseAddress"]}");
