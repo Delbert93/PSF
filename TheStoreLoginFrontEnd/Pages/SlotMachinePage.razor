@@ -22,21 +22,31 @@
     int numThree = 0;
     public void SlotMachine(int bet)
     {
-        if (userSnapshot.gameCredit >= bet)
+        try
         {
-            numOne = _random.Next(0, 9);
-            numTwo = _random.Next(0, 9);
-            numThree = _random.Next(0, 9);
+            if (userSnapshot.gameCredit >= bet)
+            {
+                numOne = _random.Next(0, 9);
+                numTwo = _random.Next(0, 9);
+                numThree = _random.Next(0, 9);
 
-            if (numOne == numTwo && numOne == numThree)
-            {
-                userSnapshot.gameCredit += CalculateWinnings(bet);
+                if (numOne == numTwo && numOne == numThree)
+                {
+                    userSnapshot.gameCredit += CalculateWinnings(bet);
+                }
+                else
+                {
+                    userSnapshot.gameCredit -= bet;
+                }
             }
-            else
-            {
-                userSnapshot.gameCredit -= bet;
-            }
+            else throw new Exception("Insufficient funds");
         }
+        catch(Exception e)
+        {
+            Console.Error.WriteLine(e);
+        }
+
+
     }
 
     public int CalculateWinnings(int bet)
