@@ -7,45 +7,112 @@ namespace TheStoreLoginTests
     public class UnitTest1
     {
         [TestMethod]
-        public void ValidateUserName()
+        public void ValidateUserNameOnLoginOrRegistration()
         {
             string badLengthUserName = "hellow";
             string badCharUserName = "hellooooow!";
             string goodUserName = "mckinnin";
-            UserModel userModel = new UserModel();
+            string goodPassword = "abcdefghijklmnopqrstuvwxyz";
 
-            //userModel.ValidateUsername(badLengthUserName);
-            //Assert.IsFalse(userModel.isValidUsername);
-            //userModel.ValidateUsername(badCharUserName);
-            //Assert.IsFalse(userModel.isValidUsername);
-            //userModel.ValidateUsername(goodUserName);
-            //Assert.IsTrue(userModel.isValidUsername);
+
+            TaintedUserModel taintedUserBadLength = new TaintedUserModel();
+            taintedUserBadLength.Username = badLengthUserName;
+            taintedUserBadLength.Password = goodPassword;
+            UserModel userModelFailLength = new UserBuilder()
+                .UseName(taintedUserBadLength.Username)
+                .UsePassword(taintedUserBadLength.Password)
+                .Build();
+
+            Assert.IsFalse(userModelFailLength.isValidUser);
+
+
+            TaintedUserModel taintedUserBadChar = new TaintedUserModel();
+            taintedUserBadChar.Username = badCharUserName;
+            taintedUserBadChar.Password = goodPassword;
+            UserModel userModelFailChar = new UserBuilder()
+                .UseName(taintedUserBadChar.Username)
+                .UsePassword(taintedUserBadChar.Password)
+                .Build();
+
+            Assert.IsFalse(userModelFailChar.isValidUser);
+
+
+            TaintedUserModel taintedUserGood = new TaintedUserModel();
+            taintedUserGood.Username = goodUserName;
+            taintedUserGood.Password = goodPassword;
+            UserModel userModelPass = new UserBuilder()
+                .UseName(taintedUserGood.Username)
+                .UsePassword(taintedUserGood.Password)
+                .Build();
+
+            Assert.IsTrue(userModelPass.isValidUser);
         }
 
         [TestMethod]
-        public void ValidatePassword()
+        public void ValidatePasswordOnLoginOrRegistration()
         {
-            //string passwordThatIsToShort = "hellow";
-            //string goodPassword = "mckinninLloyd12";
-            //UserModel userModel = new UserModel();
+            string passwordThatIsToShort = "hellow";
+            string passwordWithInvalidChar = "helloooooooooooooooo*";
+            string goodPassword = "mckinninLloyd12";
+            string goodUsername = "mckinnin";
 
-            //userModel.ValidatePassword(passwordThatIsToShort);
-            //Assert.IsFalse(userModel.isValidPassword);
-            //userModel.ValidatePassword(goodPassword);
-            //Assert.IsTrue(userModel.isValidPassword);
+            TaintedUserModel taintedUserBadLength = new TaintedUserModel();
+            taintedUserBadLength.Username = goodUsername;
+            taintedUserBadLength.Password = passwordThatIsToShort;
+            UserModel userModelFailLength = new UserBuilder()
+                .UseName(taintedUserBadLength.Username)
+                .UsePassword(taintedUserBadLength.Password)
+                .Build();
+
+            Assert.IsFalse(userModelFailLength.isValidUser);
+
+
+            TaintedUserModel taintedUserBadChar = new TaintedUserModel();
+            taintedUserBadChar.Username = goodUsername;
+            taintedUserBadChar.Password = passwordWithInvalidChar;
+            UserModel userModelFailChar = new UserBuilder()
+                .UseName(taintedUserBadChar.Username)
+                .UsePassword(taintedUserBadChar.Password)
+                .Build();
+
+            Assert.IsFalse(userModelFailChar.isValidUser);
+
+            TaintedUserModel taintedUserGood = new TaintedUserModel();
+            taintedUserGood.Username = goodUsername;
+            taintedUserGood.Password = goodPassword;
+            UserModel userModelPass = new UserBuilder()
+                .UseName(taintedUserGood.Username)
+                .UsePassword(taintedUserGood.Password)
+                .Build();
+
+            Assert.IsTrue(userModelPass.isValidUser);
         }
 
         [TestMethod]
         public void CheckReadOnceLogicOnPassword()
         {
-            //UserModel userModel = new UserModel();
-            //string goodPassword = "mckinninLloyd12";
-            //userModel.ValidatePassword(goodPassword);
-            //Assert.IsFalse(userModel.readFlag);
-            //userModel.getPassword();
-            //string nullString = userModel.getPassword();
-            //Assert.IsNull(nullString);
-            //Assert.IsTrue(userModel.readFlag);
+            string goodPassword = "mckinninLloyd12";
+            string goodUsername = "mckinnin";
+            string goodEmail = "mk.rigoli@gmail.com";
+
+            TaintedUserModel taintedUserGood = new TaintedUserModel();
+            taintedUserGood.Username = goodUsername;
+            taintedUserGood.Password = goodPassword;
+            taintedUserGood.Email = goodEmail;
+            UserModel userModelPass = new UserBuilder()
+                .UseName(taintedUserGood.Username)
+                .UsePassword(taintedUserGood.Password)
+                .UseEmail(taintedUserGood.Email)
+                .Build();
+
+            Assert.IsTrue(userModelPass.isValidUser);
+            Assert.IsFalse(userModelPass.readFlag);
+
+            userModelPass.getPassword();
+            string nullString = userModelPass.getPassword();
+
+            Assert.IsNull(nullString);
+            Assert.IsTrue(userModelPass.readFlag);
         }
     }
 }

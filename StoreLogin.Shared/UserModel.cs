@@ -13,11 +13,11 @@ namespace StoreLogin.Shared
         private readonly string password;
         private string email;
         private int gameCredit;
-        private bool readFlag = false;
         private bool isValidPassword;
         private bool isValidUsername;
         private bool isValidEmail;
         public bool isValidUser;
+        public bool readFlag = false;
 
         public UserModel(string _username, string _password)
         {
@@ -78,7 +78,7 @@ namespace StoreLogin.Shared
 
             Regex objAlphaPattern = new Regex(@"^[a-zA-Z0-9]*$");
             var hasMinimum8Chars = new Regex(@".{8,}");
-            var isValidated = objAlphaPattern.IsMatch(_username) && hasMinimum8Chars.IsMatch(_username);
+            var isValidated = objAlphaPattern.IsMatch(_username) && hasMinimum8Chars.IsMatch(_username) && System.Text.ASCIIEncoding.Unicode.GetByteCount(_username) < 1000;
 
             if (isValidated)
             {
