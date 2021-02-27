@@ -11,8 +11,24 @@ namespace TheStoreLoginTests
         {
             string badLengthUserName = "hellow";
             string badCharUserName = "hellooooow!";
+            string badEmptyUserName = "";
+            string badNullUserName = null;
             string goodUserName = "mckinnin";
             string goodPassword = "abcdefghijklmnopqrstuvwxyz";
+
+            //do a try catch here
+            //UserModel userModelFailNull = new UserModel(badNullUserName, goodPassword);
+
+
+            TaintedUserModel taintedUserBadEmpty = new TaintedUserModel();
+            taintedUserBadEmpty.Username = badEmptyUserName;
+            taintedUserBadEmpty.Password = goodPassword;
+            UserModel userModelFailEmpty = new UserBuilder()
+                .UseName(taintedUserBadEmpty.Username)
+                .UsePassword(taintedUserBadEmpty.Password)
+                .Build();
+
+            Assert.IsFalse(userModelFailEmpty.isValidUser);
 
 
             TaintedUserModel taintedUserBadLength = new TaintedUserModel();
@@ -53,8 +69,25 @@ namespace TheStoreLoginTests
         {
             string passwordThatIsToShort = "hellow";
             string passwordWithInvalidChar = "helloooooooooooooooo*";
+            string passwordThatIsEmpty = "";
+            string passwordThatisNull = null;
             string goodPassword = "mckinninLloyd12";
             string goodUsername = "mckinnin";
+
+
+            //do a try catch here
+            //UserModel userModelFailNull = new UserModel(goodUsername, passwordThatisNull);
+
+
+            TaintedUserModel taintedUserBadEmpty = new TaintedUserModel();
+            taintedUserBadEmpty.Username = goodUsername;
+            taintedUserBadEmpty.Password = passwordThatIsEmpty;
+            UserModel userModelFailEmpty = new UserBuilder()
+                .UseName(taintedUserBadEmpty.Username)
+                .UsePassword(taintedUserBadEmpty.Password)
+                .Build();
+
+            Assert.IsFalse(userModelFailEmpty.isValidUser);
 
             TaintedUserModel taintedUserBadLength = new TaintedUserModel();
             taintedUserBadLength.Username = goodUsername;
