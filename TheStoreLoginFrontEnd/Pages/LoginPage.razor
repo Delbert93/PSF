@@ -1,7 +1,9 @@
 ﻿@page "/login"
 @using StoreLogin.Shared
+@using Microsoft.Extensions.Configuration
 @inject PublicApiService publicApi
 @inject NavigationManager NavigationManager
+@inject IConfiguration config 
 <h3>LoginPage</h3>
 
 
@@ -16,6 +18,7 @@
 </div>
 <br />
 <text style="color:red;">@ResponseMessage</text>
+<p>@(config["apiBaseAddress"] ?? "there is no api config address")</p>
 
 @code {
     private string UsernameField;
