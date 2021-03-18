@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TheStoreLoginAPI.Data;
+using Serilog;
 
 
 namespace TheStoreLoginAPI
@@ -60,6 +61,7 @@ namespace TheStoreLoginAPI
             {
                 app.UseHttpsRedirection();
             }
+            app.UseSerilogRequestLogging();
 
             app.UseRouting();
 
