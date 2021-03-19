@@ -34,16 +34,8 @@ namespace TheStoreLoginAPI.Controllers
 
             if (userModel.isValidUser == true)
             {
-                var response = Get();
-                var test = 1;
-                foreach(var r in response.Result)
-                {
-                    if(r.Username == userModel.getUsername())
-                    {
-                        test = 2;
-                    }
-                }
-                if (true)
+                
+                if (DBUserInfoLoginValidation(userModel))
                 {
                     //tell UI "Login Successful;
                     UserSnapshot userSnapshot = new UserSnapshot(userModel.getUsername()) { gameCredit = userModel.getGameCredit() };
@@ -66,17 +58,30 @@ namespace TheStoreLoginAPI.Controllers
         //in class validation until DB is set up
         public bool DBUserInfoLoginValidation(UserModel userModel)
         {
-            string AdminUsername = "XYZxyzwwwzyxzyx";
-            string AdminPassword = "abcxyzefgqrshijtuv";
+            //string AdminUsername = "XYZxyzwwwzyxzyx";
+            //string AdminPassword = "abcxyzefgqrshijtuv";
+            string userName = userModel.getUsername();
+            string userPassword = userModel.getPassword();
 
-            if (userModel.getUsername() == AdminUsername && userModel.getPassword() == AdminPassword)
+            var response = Get();
+            bool foundUser = false;
+            foreach (var r in response.Result)
             {
-                return true;
+                if (r.Username == userName && r.Password == userPassword)
+                {
+                    foundUser= true;
+                }
             }
-            else
-            {
-                return false;
-            }
+
+            return foundUser;
+            //if (userModel.getUsername() == AdminUsername && userModel.getPassword() == AdminPassword)
+            //{
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
 
         }
     }

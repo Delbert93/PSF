@@ -37,7 +37,9 @@ namespace TheStoreLoginAPI.Controllers
                 //tell UI "Login Successful;
                 UserDTO userDTO = new UserDTO();
                 userDTO.Username = userModel.getUsername();
-                userDTO.Password = userModel.HashPassword(userModel.getPassword());
+                //userDTO.Password = userModel.HashPassword(userModel.getPassword());
+                //This is causing the password to get hashed twice. Did we want this or was it something we didnt relize was going on. Removed it for now so I dont have to hash the login twice. 
+                userDTO.Password = userModel.getPassword();
                 userDTO.Email = userModel.getEmail();
                 userDTO.GameCredit = userModel.getGameCredit();
                 await repository.CreateUserAsync(userDTO);
