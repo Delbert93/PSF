@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using StoreLogin.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TheStoreLoginAPI.Data;
 
 namespace TheStoreLoginAPI.Controllers
 {
@@ -12,8 +14,15 @@ namespace TheStoreLoginAPI.Controllers
     [Route("api/[controller]")]
     public class LoginController : Controller
     {
+        private readonly IRepository repository;
+
+        public LoginController(IRepository repository)
+        {
+            this.repository = repository ?? throw new ArgumentNullException(nameof(repository));
+        }
+
         [HttpGet]
-        public string Get() => "It's up.";
+        public async Task<IEnumerable<UserDTO>> Get() => await repository.Users.ToListAsync();
 
         [HttpPost("[action]")]
         public IActionResult LoginValidation(TaintedUserModel taintedUser)
@@ -29,6 +38,7 @@ namespace TheStoreLoginAPI.Controllers
                 {
                     //tell UI "Login Successful;
                     UserSnapshot userSnapshot = new UserSnapshot(userModel.getUsername()) { gameCredit = userModel.getGameCredit() };
+
                     return Ok();
                 }
                 else

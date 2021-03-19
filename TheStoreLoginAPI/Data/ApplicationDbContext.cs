@@ -14,11 +14,5 @@ namespace TheStoreLoginAPI.Data
         }
 
         public DbSet<UserDTO> Users { get; set; }
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<UserModel>()
-        //        .HasIndex(x => x.username)
-        //        .IsUnique();
-        //}
     }
 }
