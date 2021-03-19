@@ -34,7 +34,16 @@ namespace TheStoreLoginAPI.Controllers
 
             if (userModel.isValidUser == true)
             {
-                if (DBUserInfoLoginValidation(userModel))
+                var response = Get();
+                var test = 1;
+                foreach(var r in response.Result)
+                {
+                    if(r.Username == userModel.getUsername())
+                    {
+                        test = 2;
+                    }
+                }
+                if (true)
                 {
                     //tell UI "Login Successful;
                     UserSnapshot userSnapshot = new UserSnapshot(userModel.getUsername()) { gameCredit = userModel.getGameCredit() };
