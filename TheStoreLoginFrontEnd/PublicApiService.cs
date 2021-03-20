@@ -68,5 +68,11 @@ namespace TheStoreLoginFrontEnd
                 return false;
             }
         }
+
+        public async Task<IEnumerable<UserDTO>> GetUsersAsync()
+        {
+            var users = await client.GetFromJsonAsync<IEnumerable<UserDTO>>("api/Login");
+            return users;
+        }
     }
 }

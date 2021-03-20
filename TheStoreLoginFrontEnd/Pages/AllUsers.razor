@@ -7,20 +7,23 @@
 <h3>Site Users</h3>
 
 
-<div class="container">
-   
+
+<div>
+    @foreach (var u in user)
+    {
+        <br />
+        <label><a class="lists">@u.Username</a></label>
+        <label><a class="lists">@u.GameCredit</a></label>
+    }
 </div>
-<br />
 
 
 @code {
-    private string UsernameField;
-    private string PasswordField;
 
+        private IEnumerable<UserDTO> user = new List<UserDTO>();
 
-    //private async Task RefreshProjectsAsync(bool Response)
-    //{
-
-    //}
-
+        protected override async Task OnInitializedAsync()
+        {
+            user = await publicApi.GetUsersAsync();
+        }
 }
