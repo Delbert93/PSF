@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace AdminAPI.Migrations
+namespace TheStoreLoginAPI.Migrations
 {
     public partial class Admin : Migration
     {

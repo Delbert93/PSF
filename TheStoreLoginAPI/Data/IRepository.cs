@@ -11,5 +11,9 @@ namespace TheStoreLoginAPI.Data
         IQueryable<UserDTO> Users { get; }
 
         Task CreateUserAsync(UserDTO user);
+
+        IQueryable<Admin> Admins { get; }
+
+        Task CreateAdminAsync(Admin admin);
     }
 }

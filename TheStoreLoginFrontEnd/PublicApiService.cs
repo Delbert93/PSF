@@ -42,5 +42,18 @@ namespace TheStoreLoginFrontEnd
                 return false;
             }
         }
+
+        public async Task<bool> AdminRegistration(TaintedUserModel taintedUser)
+        {
+            var response = await client.PostAsJsonAsync("AdminAPI/IsAdmin/AdminRegistration", taintedUser);
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

@@ -14,5 +14,6 @@ namespace TheStoreLoginAPI.Data
         }
 
         public DbSet<UserDTO> Users { get; set; }
+        public DbSet<Admin> Admins { get; set; }
     }
 }

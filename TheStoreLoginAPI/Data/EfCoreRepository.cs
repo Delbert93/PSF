@@ -26,5 +26,19 @@ namespace TheStoreLoginAPI.Data
             {
             }
         }
+
+        public IQueryable<Admin> Admins => context.Admins;
+
+        public async Task CreateAdminAsync(Admin admin)
+        {
+            try
+            {
+                context.Admins.Add(admin);
+                await context.SaveChangesAsync();
+            }
+            catch (Exception e)
+            {
+            }
+        }
     }
 }
