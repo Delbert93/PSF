@@ -1,0 +1,59 @@
+﻿@page "/alogin"
+@using StoreLogin.Shared
+@using Microsoft.Extensions.Configuration
+@inject PublicApiService publicApi
+@inject NavigationManager NavigationManager
+@inject IConfiguration config
+<h3>LoginPage</h3>
+
+
+<div class="container">
+    <label for="uname"><b>Username</b></label>
+    <textarea @bind="UsernameField"></textarea>
+
+    <label for="psw"><b>Password</b></label>
+    <textarea @bind="PasswordField"></textarea>
+
+    <button type="submit" @onclick="LoginValidation">Login</button>
+</div>
+<br />
+<text style="color:red;">@ResponseMessage</text>
+
+@code {
+    private string UsernameField;
+    private string PasswordField;
+    private bool Response;
+    public string ResponseMessage;
+
+    private async Task LoginValidation()
+    {
+        if (System.Text.ASCIIEncoding.Unicode.GetByteCount(UsernameField) < 1000 && System.Text.ASCIIEncoding.Unicode.GetByteCount(PasswordField) < 1000)
+        {
+            var taintedUser = new TaintedUserModel()
+            {
+                Username = UsernameField,
+                Password = PasswordField
+            };
+            Response = await publicApi.AdminValidateLogin(taintedUser);
+            await RefreshProjectsAsync(Response);
+        }
+        else
+        {
+
+        }
+    }
+
+    private async Task RefreshProjectsAsync(bool Response)
+    {
+        if (Response)
+        {
+            ResponseMessage = "Login Successful";
+            NavigationManager.NavigateTo("/allUsers", true);
+        }
+        else
+        {
+            ResponseMessage = "Invalid Username or Password";
+        }
+    }
+
+}

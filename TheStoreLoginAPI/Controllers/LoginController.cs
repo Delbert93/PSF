@@ -74,14 +74,6 @@ namespace TheStoreLoginAPI.Controllers
             }
 
             return foundUser;
-            //if (userModel.getUsername() == AdminUsername && userModel.getPassword() == AdminPassword)
-            //{
-            //    return true;
-            //}
-            //else
-            //{
-            //    return false;
-            //}
 
         }
     }

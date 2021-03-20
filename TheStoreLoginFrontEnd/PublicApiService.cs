@@ -55,5 +55,18 @@ namespace TheStoreLoginFrontEnd
                 return false;
             }
         }
+
+        public async Task<bool> AdminValidateLogin(TaintedUserModel taintedUser)
+        {
+            var response = await client.PostAsJsonAsync("admin/IsAdmin/LoginValidation", taintedUser);
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
