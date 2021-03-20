@@ -1,3 +1,4 @@
+using AdminAPI.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -5,16 +6,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.FeatureManagement;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TheStoreLoginAPI.Data;
-using Serilog;
 
-
-namespace TheStoreLoginAPI
+namespace AdminAPI
 {
     public class Startup
     {
@@ -32,8 +29,6 @@ namespace TheStoreLoginAPI
             services.AddScoped<IRepository, EfCoreRepository>();
             services.AddRazorPages();
 
-            services.AddFeatureManagement();
-
             services.AddControllers();
 
             services.AddCors(options =>
@@ -42,7 +37,7 @@ namespace TheStoreLoginAPI
                     builder =>
                     {
                         builder
-                            .WithOrigins("http://localhost:62788", "http://localhost:5000", "https://delbert93.github.io", "http://localhost:5005")
+                            .WithOrigins("http://localhost:62788", "http://localhost:5000", "https://delbert93.github.io", "http://localhost:5010")
                             .AllowAnyMethod()
                             .AllowAnyHeader()
                             .AllowCredentials();
@@ -61,7 +56,6 @@ namespace TheStoreLoginAPI
             {
                 app.UseHttpsRedirection();
             }
-            app.UseSerilogRequestLogging();
 
             app.UseRouting();
 
