@@ -45,7 +45,7 @@ namespace TheStoreLoginFrontEnd
 
         public async Task<bool> AdminRegistration(TaintedUserModel taintedUser)
         {
-            var response = await client.PostAsJsonAsync("AdminAPI/IsAdmin/AdminRegistration", taintedUser);
+            var response = await client.PostAsJsonAsync("admin/IsAdmin/AdminRegistration", taintedUser);
             if (response.IsSuccessStatusCode)
             {
                 return true;

@@ -24,7 +24,7 @@ namespace AdminAPI.Controllers
         public async Task<IEnumerable<Admin>> Get() => await repository.Admins.ToListAsync();
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> AdminValidation(TaintedUserModel taintedUser)
+        public async Task<IActionResult> AdminRegistration(TaintedUserModel taintedUser)
         {
             UserModel userModel = new UserBuilder()
                 .UseName(taintedUser.Username)
