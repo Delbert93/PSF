@@ -1,4 +1,4 @@
-﻿@page "/allUsers/{Key:int}"
+﻿@page "/allUsers/{Key}"
 @using StoreLogin.Shared
 @using Microsoft.Extensions.Configuration
 @inject PublicApiService publicApi
@@ -19,13 +19,14 @@
 
 @code {
     [Parameter]
-    public int Key { get; set; }
+    public string Key { get; set; }
+    private bool KeyFlag = false;
 
     private IEnumerable<UserDTO> user = new List<UserDTO>();
 
     protected override async Task OnInitializedAsync()
     {
-        if(Key == 0)
+        if(Key == null)
         {
             NavigationManager.NavigateTo("/alogin", true);
         }

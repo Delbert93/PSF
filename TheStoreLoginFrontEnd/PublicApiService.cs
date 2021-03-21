@@ -81,5 +81,12 @@ namespace TheStoreLoginFrontEnd
             var key = users.Where(k => k.Username == userName).First();
             return key;
         }
+
+        public async Task<Admin> CheckAdminKey(String key)
+        {
+            var users = await client.GetFromJsonAsync<IEnumerable<Admin>>("admin/IsAdmin");
+            var userkey = users.Where(k => k.Key == key).First();
+            return userkey;
+        }
     }
 }
