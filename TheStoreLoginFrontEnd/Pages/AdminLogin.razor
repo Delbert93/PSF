@@ -24,16 +24,23 @@
     private string PasswordField;
     private bool Response;
     public string ResponseMessage;
+    TaintedUserModel taintedUser = new TaintedUserModel();
+
+    [Parameter]
+    public string Key { get; set; }
+
+    Admin admin = new Admin();
+
 
     private async Task LoginValidation()
     {
         if (System.Text.ASCIIEncoding.Unicode.GetByteCount(UsernameField) < 1000 && System.Text.ASCIIEncoding.Unicode.GetByteCount(PasswordField) < 1000)
         {
-            var taintedUser = new TaintedUserModel()
-            {
-                Username = UsernameField,
-                Password = PasswordField
-            };
+
+            taintedUser.Username = UsernameField;
+            taintedUser.Password = PasswordField;
+
+
             Response = await publicApi.AdminValidateLogin(taintedUser);
             await RefreshProjectsAsync(Response);
         }
@@ -47,8 +54,13 @@
     {
         if (Response)
         {
+
             ResponseMessage = "Login Successful";
-            NavigationManager.NavigateTo("/allUsers", true);
+            admin = await publicApi.GetAdminKey(taintedUser.Username);
+            if(admin.Key != null)
+            {
+                NavigationManager.NavigateTo("/allUsers/" + admin.Key);
+            }
         }
         else
         {

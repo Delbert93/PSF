@@ -4,6 +4,7 @@ using StoreLogin.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using TheStoreLoginAPI.Data;
 
@@ -39,6 +40,9 @@ namespace AdminAPI.Controllers
                 admin.Username = userModel.getUsername();
                 admin.Password = userModel.getPassword();
                 admin.Email = userModel.getEmail();
+                Random rnd = new Random();
+                int randKey = rnd.Next(1000000, 2000000000);
+                admin.Key = userModel.HashKey(randKey.ToString());
                 await repository.CreateAdminAsync(admin);
                 return Ok();
             }

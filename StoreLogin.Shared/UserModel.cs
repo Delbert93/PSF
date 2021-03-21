@@ -126,6 +126,14 @@ namespace StoreLogin.Shared
             return hash;
         }
 
+        public string HashKey(string key)
+        {
+            byte[] data = System.Text.Encoding.ASCII.GetBytes(key);
+            data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+            String hash = System.Text.Encoding.ASCII.GetString(data);
+            return hash;
+        }
+
         public bool ValidateCredits()
         {
             return true;

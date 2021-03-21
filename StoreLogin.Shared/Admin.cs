@@ -19,5 +19,8 @@ namespace StoreLogin.Shared
         [JsonPropertyName("email")]
         public string Email { get; set; }
 
+        [JsonPropertyName("key")]
+        public string Key { get; set; }
+
     }
 }

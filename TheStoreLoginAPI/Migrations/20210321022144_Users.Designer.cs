@@ -9,8 +9,8 @@ using TheStoreLoginAPI.Data;
 namespace TheStoreLoginAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210320185923_Admin")]
-    partial class Admin
+    [Migration("20210321022144_Users")]
+    partial class Users
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,6 +28,9 @@ namespace TheStoreLoginAPI.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("Email")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Key")
                         .HasColumnType("text");
 
                     b.Property<string>("Password")

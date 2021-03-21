@@ -74,5 +74,12 @@ namespace TheStoreLoginFrontEnd
             var users = await client.GetFromJsonAsync<IEnumerable<UserDTO>>("api/Login");
             return users;
         }
+
+        public async Task<Admin> GetAdminKey(String userName)
+        {
+            var users = await client.GetFromJsonAsync<IEnumerable<Admin>>("admin/IsAdmin");
+            var key = users.Where(k => k.Username == userName).First();
+            return key;
+        }
     }
 }

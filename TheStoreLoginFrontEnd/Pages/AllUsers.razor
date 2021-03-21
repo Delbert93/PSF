@@ -1,11 +1,10 @@
-﻿@page "/allUsers"
+﻿@page "/allUsers/{Key:int}"
 @using StoreLogin.Shared
 @using Microsoft.Extensions.Configuration
 @inject PublicApiService publicApi
 @inject NavigationManager NavigationManager
 @inject IConfiguration config
 <h3>Site Users</h3>
-
 
 
 <div>
@@ -19,11 +18,20 @@
 
 
 @code {
+    [Parameter]
+    public int Key { get; set; }
 
-        private IEnumerable<UserDTO> user = new List<UserDTO>();
+    private IEnumerable<UserDTO> user = new List<UserDTO>();
 
-        protected override async Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync()
+    {
+        if(Key == 0)
+        {
+            NavigationManager.NavigateTo("/alogin", true);
+        }
+        else
         {
             user = await publicApi.GetUsersAsync();
         }
+    }
 }
