@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using TheStoreLoginAPI.Data;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Serilog;
 
 namespace TheStoreLoginAPI.Controllers
 {
@@ -43,6 +44,7 @@ namespace TheStoreLoginAPI.Controllers
                 userDTO.Email = userModel.getEmail();
                 userDTO.GameCredit = userModel.getGameCredit();
                 await repository.CreateUserAsync(userDTO);
+                Log.Information("User " + userModel.getUsername() + " Has been created successfully");
                 return Ok();
             }
             else

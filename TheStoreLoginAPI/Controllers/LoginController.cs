@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TheStoreLoginAPI.Data;
+using Serilog;
 
 namespace TheStoreLoginAPI.Controllers
 {
@@ -40,6 +41,7 @@ namespace TheStoreLoginAPI.Controllers
                     //tell UI "Login Successful;
                     UserSnapshot userSnapshot = new UserSnapshot(userModel.getUsername()) { gameCredit = userModel.getGameCredit() };
 
+                    Log.Information("User " + userModel.getUsername() + " Has logged in successfully");
                     return Ok();
                 }
                 else
