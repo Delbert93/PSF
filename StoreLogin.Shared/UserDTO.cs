@@ -10,6 +10,9 @@ namespace StoreLogin.Shared
         [JsonPropertyName("id")]
         public int Id { get; set; }
 
+        [JsonPropertyName("sessionId")]
+        public string SessionId { get; set; }
+
         [JsonPropertyName("username")]
         public string Username { get; set; }
 
