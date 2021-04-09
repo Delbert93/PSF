@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TheStoreLoginAPI.Data;
+using Serilog;
 
 namespace TheStoreLoginAPI.Controllers
 {
@@ -42,6 +43,8 @@ namespace TheStoreLoginAPI.Controllers
                     UserSnapshot userSnapshot = new UserSnapshot(userModel.getUsername()) { gameCredit = userModel.getGameCredit() };
                     
                     HttpContext.Session.SetString("sessionId", Guid.NewGuid().ToString());
+
+                    Log.Information("User " + userModel.getUsername() + " Has logged in successfully");
                     return Ok();
                 }
                 else
