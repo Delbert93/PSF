@@ -13,6 +13,9 @@ namespace StoreLogin.Shared
         [JsonPropertyName("sessionId")]
         public string SessionId { get; set; }
 
+        [JsonPropertyName("sessionidexpireson")]
+        public DateTime? SessionIdExpiresOn { get; set; }
+
         [JsonPropertyName("username")]
         public string Username { get; set; }
 
