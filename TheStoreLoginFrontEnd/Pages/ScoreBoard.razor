@@ -1,0 +1,52 @@
+﻿@page "/scoreboard"
+@using StoreLogin.Shared
+@using Microsoft.Extensions.Configuration
+@inject PublicApiService publicApi
+@inject NavigationManager NavigationManager
+@inject IConfiguration config
+
+<h3>ScoreBoard</h3>
+<div>
+    <table id="myTable" class="table" cellspacing="0">
+        <thead>
+            <tr>
+                <th>
+                    Rank
+                </th>
+                <th>
+                    Username
+                </th>
+                <th>
+                    Total Credits
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var u in users.OrderByDescending(m => m.GameCredit))
+            {
+            <tr>
+                <td>
+                    
+                </td>
+                <td>
+                    @u.Username
+                </td>
+                <td>
+                    @u.GameCredit
+                </td>
+            </tr>
+            }
+            </tbody>
+    </table>
+</div>
+@code {
+    private IEnumerable<UserDTO> users = new List<UserDTO>();
+    private int rank = 1;
+    
+
+    protected override async Task OnInitializedAsync()
+    {
+        users = await publicApi.GetUsersAsync();
+    }
+
+}
