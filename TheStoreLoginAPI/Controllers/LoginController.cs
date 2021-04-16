@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using StoreLogin.Shared;
@@ -40,6 +41,8 @@ namespace TheStoreLoginAPI.Controllers
                 {
                     //tell UI "Login Successful;
                     UserSnapshot userSnapshot = new UserSnapshot(userModel.getUsername()) { gameCredit = userModel.getGameCredit() };
+                    
+                    HttpContext.Session.SetString("sessionId", Guid.NewGuid().ToString());
 
                     Log.Information("User " + userModel.getUsername() + " Has logged in successfully");
                     return Ok();

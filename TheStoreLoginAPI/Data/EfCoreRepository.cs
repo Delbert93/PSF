@@ -40,5 +40,13 @@ namespace TheStoreLoginAPI.Data
             {
             }
         }
+
+        public async Task AssignSessionIdToUserAsync(int userid, Guid sessionId)
+        {
+            var user = await context.Users.FindAsync(userid);
+            user.SessionId = sessionId.ToString();
+            await context.SaveChangesAsync();
+
+        }
     }
 }

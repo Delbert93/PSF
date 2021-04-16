@@ -36,6 +36,8 @@ namespace TheStoreLoginAPI
 
             services.AddControllers();
 
+            services.AddSession();
+
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(
@@ -68,6 +70,8 @@ namespace TheStoreLoginAPI
             app.UseCors();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
