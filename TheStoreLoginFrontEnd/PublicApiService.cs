@@ -43,6 +43,19 @@ namespace TheStoreLoginFrontEnd
             }
         }
 
+        public async Task<bool> ValidateCashout(TaintedUserModel taintedUser)
+        {
+            var response = await client.PostAsJsonAsync("api/Login/LoginValidation", taintedUser);
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public async Task<bool> AdminRegistration(TaintedUserModel taintedUser)
         {
             var response = await client.PostAsJsonAsync("admin/IsAdmin/AdminRegistration", taintedUser);

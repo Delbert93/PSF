@@ -1,6 +1,11 @@
 ﻿@page "/"
+
 @inject TheStoreLoginFrontEnd.PublicApiService projectApi
+@inject NavigationManager NavigationManager
+@inject IConfiguration config
+
 @using StoreLogin.Shared
+@using Microsoft.Extensions.Configuration
 <h3>SlotMachinePage</h3>
 <div>Total Credits: <h4>@userSnapshot.gameCredit</h4></div>
 
@@ -12,10 +17,21 @@
 <span>@numTwo</span>
 <span>@numThree</span>
 <br />
+<br />
+<br />
+<label for="uname"><b>Username</b></label>
+<textarea @bind="UsernameField"></textarea>
+
+<label for="psw"><b>Password</b></label>
+<textarea @bind="PasswordField"></textarea>
 <button type="submit" @onclick="() => Cashout()">Cashout</button>
 
 @code {
-    private UserSnapshot userSnapshot = new UserSnapshot("Username") {gameCredit = 1500 };
+    private UserSnapshot userSnapshot = new UserSnapshot("Username") { gameCredit = 1500 };
+    private string UsernameField;
+    private string PasswordField;
+    private bool Response;
+    public string ResponseMessage;
     private readonly Random _random = new Random();
     int numOne = 0;
     int numTwo = 0;
@@ -41,12 +57,24 @@
             }
             else throw new Exception("Insufficient funds");
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             Console.Error.WriteLine(e);
         }
 
 
+    }
+
+    private async Task RefreshProjectsAsync(bool Response)
+    {
+        if (Response)
+        {
+            ResponseMessage = "Credits Successfully Stored";
+        }
+        else
+        {
+            ResponseMessage = "Invalid Username or Password";
+        }
     }
 
     public int CalculateWinnings(int bet)
@@ -55,9 +83,16 @@
         return winnings;
     }
 
-    public void Cashout()
+    public async Task Cashout()
     {
         //send this back through login to update datebase
+        var taintedUser = new TaintedUserModel()
+        {
+            Username = UsernameField,
+            Password = PasswordField,
+            Credits = userSnapshot.gameCredit
+        };
+        Response = await projectApi.ValidateCashout(taintedUser);
+        await RefreshProjectsAsync(Response);
     }
-
 }
