@@ -15,6 +15,6 @@ namespace TheStoreLoginAPI.Data
         IQueryable<Admin> Admins { get; }
 
         Task CreateAdminAsync(Admin admin);
-        Task AssignSessionIdToUserAsync(int userid, Guid sessionId);
+        Task AssignSessionIdToUserAsync(int id, string sessionString);
     }
 }

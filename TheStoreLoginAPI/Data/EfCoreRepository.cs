@@ -41,7 +41,7 @@ namespace TheStoreLoginAPI.Data
             }
         }
 
-        public async Task AssignSessionIdToUserAsync(int userid, Guid sessionId)
+        public async Task AssignSessionIdToUserAsync(int userid, string sessionId)
         {
             var user = await context.Users.FindAsync(userid);
             user.SessionId = sessionId.ToString();

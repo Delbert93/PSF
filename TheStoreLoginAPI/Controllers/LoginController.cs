@@ -27,7 +27,7 @@ namespace TheStoreLoginAPI.Controllers
         public async Task<IEnumerable<UserDTO>> Get() => await repository.Users.ToListAsync();
 
         [HttpPost("[action]")]
-        public IActionResult LoginValidation(TaintedUserModel taintedUser)
+        public async Task<IActionResult> LoginValidation(TaintedUserModel taintedUser)
         {
             UserModel userModel = new UserBuilder()
                     .UseName(taintedUser.Username)
@@ -43,6 +43,19 @@ namespace TheStoreLoginAPI.Controllers
                     UserSnapshot userSnapshot = new UserSnapshot(userModel.getUsername()) { gameCredit = userModel.getGameCredit() };
                     
                     HttpContext.Session.SetString("sessionId", Guid.NewGuid().ToString());
+                    
+                   
+                    //tell UI "Login Successful;
+                    UserDTO userDTO = new UserDTO();
+                    userDTO.Username = userModel.getUsername();
+                    //userDTO.Password = userModel.HashPassword(userModel.getPassword());
+                    //This is causing the password to get hashed twice. Did we want this or was it something we didnt relize was going on. Removed it for now so I dont have to hash the login twice. 
+                    userDTO.Password = userModel.getPassword();
+                    userDTO.Email = userModel.getEmail();
+                    userDTO.GameCredit = userModel.getGameCredit();
+
+                    var sessionString = Guid.NewGuid().ToString();
+                    await repository.AssignSessionIdToUserAsync(userDTO.Id, sessionString);
 
                     Log.Information("User " + userModel.getUsername() + " Has logged in successfully");
                     return Ok();
@@ -79,8 +92,8 @@ namespace TheStoreLoginAPI.Controllers
             }
 
             return foundUser;
-
         }
+
     }
 
 }
